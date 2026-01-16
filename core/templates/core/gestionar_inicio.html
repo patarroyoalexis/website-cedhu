@@ -1,0 +1,228 @@
+{% extends 'core/panel_admin.html' %} {% load static %} {% block content %}
+<h2>Editar contenido de la página de inicio</h2>
+
+{% for message in messages %}
+<p class="mensaje-success">{{ message }}</p>
+{% endfor %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <!-- Logo -->
+  <div class="form-group">
+    <label>Logo:</label>
+    {% if contenido.logo %}
+    <img src="{{ contenido.logo.url }}" class="preview-img" />
+    {% endif %}
+    <input type="file" name="logo" />
+  </div>
+
+  <!-- Galería -->
+  <h3 class="section-title">Gestionar galería de inicio</h3>
+
+  <div class="form-group">
+    <label>Título de la galería:</label>
+    <input
+      type="text"
+      name="titulo_galeria"
+      value="{{ contenido.titulo_galeria }}"
+    />
+  </div>
+
+  {% if gallery_images %} {% for img in gallery_images %}
+  <div class="gallery-item-edit">
+    <h4>Imagen {{ forloop.counter }}</h4>
+
+    {% if img.image %}
+    <img src="{{ img.image.url }}" class="preview-img" />
+    {% endif %}
+
+    <label>Descripción:</label>
+    <textarea name="descripcion_{{ img.id }}">{{ img.descripcion }}</textarea>
+
+    <label>Orden:</label>
+    <input type="number" name="orden_{{ img.id }}" value="{{ img.orden }}" />
+
+    <label>Cambiar imagen:</label>
+    <input type="file" name="imagen_{{ img.id }}" />
+
+    <label
+      ><input type="checkbox" name="delete_{{ img.id }}" /> Eliminar esta
+      imagen</label
+    >
+  </div>
+  {% endfor %} {% else %}
+  <p>No hay imágenes en la galería aún.</p>
+  {% endif %}
+
+  <!-- Agregar nuevas imágenes -->
+  <div class="gallery-item-edit">
+    <h4>Agregar nuevas imágenes</h4>
+
+    <label>Seleccionar imágenes (puedes subir varias):</label>
+    <input type="file" name="nuevas_imagenes" multiple />
+
+    <label>Descripciones (una por línea):</label>
+    <textarea
+      name="nuevas_descripciones"
+      placeholder="Descripción 1&#10;Descripción 2&#10;..."
+    ></textarea>
+
+    <label>Órdenes (una por línea):</label>
+    <textarea name="nuevas_ordenes" placeholder="1&#10;2&#10;..."></textarea>
+  </div>
+
+  <!-- Manual -->
+  <h3 class="section-title">Manual y Dirección</h3>
+
+  <div class="form-group">
+    <label>Imagen del manual:</label>
+    {% if contenido.imagen_manual %}
+    <img src="{{ contenido.imagen_manual.url }}" class="preview-img" />
+    {% endif %}
+    <input type="file" name="imagen_manual" />
+  </div>
+
+  <div class="form-group">
+    <label>URL del manual:</label>
+    <input type="url" name="url_manual" value="{{ contenido.url_manual }}" />
+  </div>
+
+  <div class="form-group">
+    <label>Texto dirección:</label>
+    <input
+      type="text"
+      name="texto_direccion"
+      value="{{ contenido.texto_direccion }}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label>Iframe de mapa:</label>
+    <textarea name="iframe_mapa" rows="4">{{ contenido.iframe_mapa }}</textarea>
+  </div>
+
+  <button type="submit">Guardar cambios</button>
+</form>
+
+<style>
+  h2,
+  h3 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: #2c3e50;
+    text-align: center;
+  }
+
+  .section-title {
+    color: #2c3e50;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 0.3rem;
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+  }
+
+  form {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    padding: 2rem;
+    background: #f7f9fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    color: #34495e;
+  }
+
+  input[type="text"],
+  input[type="url"],
+  input[type="file"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #3498db;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .preview-img {
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: auto;
+  }
+
+  button[type="submit"] {
+    display: block;
+    background-color: #2980b9;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #1c5980;
+  }
+
+  .mensaje-success {
+    max-width: 700px;
+    margin: 1rem auto;
+    text-align: center;
+    font-weight: 600;
+    color: #27ae60;
+  }
+
+  .gallery-item-edit {
+    margin-bottom: 2rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .gallery-item-edit h4 {
+    margin-top: 0;
+    color: #2980b9;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+</style>
+{% endblock %}

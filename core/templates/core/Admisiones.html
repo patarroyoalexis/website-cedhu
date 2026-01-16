@@ -1,0 +1,106 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Admisiones - CEDHU{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+
+<main class="admisiones">
+
+  <!-- HERO / ENCABEZADO -->
+  <section class="admisiones-hero ">
+    <div class="container">
+      <h1 class="animate fade-up">Admisiones CEDHU</h1>
+      <p class="animate fade-up delay-1">
+        Abrimos las puertas a nuevas familias que creen en una educación con valores,
+        innovación y acompañamiento integral.
+      </p>
+      <a href="#proceso" class="btn-primary animate zoom-in delay-2">Conoce el proceso</a>
+    </div>
+  </section>
+
+  <!-- BIENVENIDA -->
+  <section class="admisiones-bienvenida">
+    <div class="container">
+      <h2>Bienvenidos al CEDHU</h2>
+      <p>
+        En el CEDHU acompañamos a cada educando en su proceso formativo,
+        fortaleciendo sus habilidades académicas, sociales y emocionales.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROCESO DE ADMISIONES -->
+  <section id="proceso" class="admisiones-proceso">
+    <div class="container">
+      <h2>Proceso de Admisión</h2>
+
+      <div class="proceso-grid">
+        <article class="paso animate fade-up delay-1">
+          <span class="paso-numero">1</span>
+          <h3>Solicitud de Información</h3>
+          <p>Las familias interesadas pueden contactarnos o diligenciar el formulario de admisión.</p>
+        </article>
+
+        <article class="paso animate fade-up delay-2">
+          <span class="paso-numero">2</span>
+          <h3>Entrevista</h3>
+          <p>Se realiza una entrevista con el educando y su familia.</p>
+        </article>
+
+        <article class="paso animate fade-up delay-3">
+          <span class="paso-numero">3</span>
+          <h3>Evaluación</h3>
+          <p>Valoramos aspectos académicos y socioemocionales.</p>
+        </article>
+
+        <article class="paso animate fade-up delay-4">
+          <span class="paso-numero">4</span>
+          <h3>Resultado</h3>
+          <p>Informamos el resultado y los pasos para formalizar la matrícula.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUISITOS -->
+  <section class="admisiones-requisitos">
+    <div class="container">
+      <h2>Requisitos</h2>
+
+      <ul class="lista-requisitos animate fade-up">
+        <li>Formulario de admisión diligenciado</li>
+        <li>Registro civil o documento de identidad</li>
+        <li>Boletines del último año cursado</li>
+        <li>Paz y salvo del colegio anterior</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CRONOGRAMA O FECHAS -->
+  <section class="admisiones-fechas">
+    <div class="container">
+      <h2>Fechas Importantes</h2>
+      <p>
+        Las admisiones están abiertas durante el año, sujetas a disponibilidad de cupos.
+      </p>
+    </div>
+  </section>
+
+  <!-- LLAMADO A LA ACCIÓN -->
+  <section class="admisiones-cta">
+    <div class="container">
+      <h2>¿Deseas más información?</h2>
+      <p>
+        Nuestro equipo estará encantado de acompañarte en el proceso.
+      </p>
+      <a href="/contacto" class="btn-secondary">Contáctanos</a>
+    </div>
+  </section>
+
+</main>
+<script src="{% static 'core/js/Admisiones.js' %}"></script>
+
+{% endblock %}

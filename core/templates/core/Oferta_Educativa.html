@@ -1,0 +1,379 @@
+{% extends 'core/base.html' %} {% block title %}OBJETIVOS, METODOLOGÍAS E
+INVESTIGACIÓN - CEDHU{% endblock %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/oferta_educativa.css' %}" />
+{% endblock %} {% block content %}
+<!-- ========================================
+     SECCIÓN HERO PRINCIPAL
+======================================== -->
+<section class="modelo-educativo">
+  <div class="hero-content container">
+    <h2>OFERTA EDUCATIVA</h2>
+    <p>
+      Conoce a fondo nuestra visión y metodologías de aprendizaje
+    </p>
+  </div>
+</section>
+
+<div class="Contenedor-del-todo">
+  <!-- ========================================
+        SECCIÓN OBJETIVO INSTITUCIONAL
+    ======================================== -->
+  <section
+    id="objetivos-institucionales"
+    class="seccion-objetivo-institucional"
+  >
+    <div class="contenedor-completo-objetivos">
+      <!-- Objetivo General -->
+      <div class="contenedor-objetivo-general">
+        <h2 class="titulo-objetivo-general">OBJETIVO GENERAL</h2>
+        <div class="caja-contenido-objetivo-general">
+          <p class="parrafo-objetivo-general">
+            Formar seres humanos íntegros, felices y competentes, capaces de
+            transformar su entorno social y productivo mediante la apropiación
+            de la Pedagogía de la Felicidad y la excelencia académica.
+          </p>
+        </div>
+      </div>
+
+      <div class="contenedor-objetivos-especificos">
+        <h3 class="titulo-objetivos-especificos-general">
+          OBJETIVOS ESPECÍFICOS
+        </h3>
+
+        <article class="tarjeta-objetivo-especifico">
+          <div class="contenido-objetivo-especifico">
+            <p class="parrafo-objetivo-especifico">
+              Desarrollar competencias académicas sólidas en todas las áreas del
+              conocimiento mediante metodologías activas y personalizadas que
+              potencien el pensamiento crítico.
+            </p>
+          </div>
+        </article>
+
+        <article class="tarjeta-objetivo-especifico">
+          <div class="contenido-objetivo-especifico">
+            <p class="parrafo-objetivo-especifico">
+              Fortalecer habilidades socioemocionales a través de la Pedagogía
+              de la Felicidad, promoviendo el bienestar integral y la
+              construcción de relaciones saludables.
+            </p>
+          </div>
+        </article>
+
+        <article class="tarjeta-objetivo-especifico">
+          <div class="contenido-objetivo-especifico">
+            <p class="parrafo-objetivo-especifico">
+              Fomentar el liderazgo, la innovación y el compromiso social
+              mediante proyectos de investigación y participación comunitaria
+              que impacten positivamente el entorno.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="areas-destacadas">
+    <h2>ÁREAS DESTACADAS</h2>
+
+    <div class="cards-container">
+      <a href="#modal-0" class="card" data-index="0">
+        <img src="/static/core/img/ingles.jpeg" alt="Inglés" />
+        <h3>Inglés</h3>
+      </a>
+
+      <a href="#modal-1" class="card" data-index="1">
+        <img src="/static/core/img/deportes.jpeg" alt="Deportes" />
+        <h3>Deportes</h3>
+      </a>
+
+      <a href="#modal-2" class="card" data-index="2">
+        <img src="/static/core/img/investigacion.jpeg" alt="Investigación" />
+        <h3>Investigación</h3>
+      </a>
+
+      <a href="#modal-3" class="card" data-index="3">
+        <img src="/static/core/img/robotica1.jpeg" alt="Robótica" />
+        <h3>Robótica</h3>
+      </a>
+
+      <a href="#modal-4" class="card" data-index="4">
+        <img src="/static/core/img/danzas.jpeg" alt="Danzas" />
+        <h3>Danzas</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Modales (sin cambios, conservando diseño y funcionalidad) -->
+  <!-- Modal Inglés -->
+  <div id="modal-0" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Inglés</h2>
+      <img src="{% static 'core/img/toelf.jpeg' %}" alt="Inglés" />
+      <p>
+        El área de Inglés fortalece la competencia comunicativa de nuestros
+        educandos, promoviendo un aprendizaje práctico y significativo de una
+        segunda lengua. Fomentamos la expresión oral, la comprensión lectora y
+        el pensamiento crítico desde una visión global.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Deportes -->
+  <div id="modal-1" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Deportes</h2>
+      <img src="{% static 'core/img/trofeos.jpeg' %}" alt="Deportes" />
+      <p>
+        Desde el deporte cultivamos disciplina, trabajo en equipo y hábitos de
+        vida saludable. Impulsamos valores como el respeto, la perseverancia y
+        el espíritu competitivo, aportando al desarrollo integral de nuestros
+        educandos.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Investigación -->
+  <div id="modal-2" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Investigación</h2>
+      <img
+        src="{% static 'core/img/investigacion.jpeg' %}"
+        alt="Investigación"
+      />
+      <p>
+        En el CEDHU, la investigación es un eje formativo esencial. Promovemos
+        proyectos que despiertan la curiosidad, el análisis y la creatividad,
+        formando educandos capaces de comprender su realidad y proponer
+        soluciones innovadoras
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Robótica -->
+  <div id="modal-3" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Robótica</h2>
+      <img src="{% static 'core/img/robotica1.jpeg' %}" alt="Robótica" />
+      <p>
+        El área de Robótica une tecnología, ciencia y creatividad. Nuestros
+        educandos adquieren pensamiento lógico, habilidades de programación y
+        competencias del futuro mediante la construcción y diseño de soluciones
+        tecnológicas.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Danzas -->
+  <div id="modal-4" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Danzas</h2>
+      <img src="{% static 'core/img/danzas.jpeg' %}" alt="Danzas" />
+      <p>
+        Danzas es un espacio de expresión artística donde los educandos
+        fortalecen su identidad cultural, sensibilidad estética y capacidad de
+        trabajo colaborativo. A través del movimiento, desarrollan confianza,
+        creatividad y valoración de la diversidad.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================
+        SECCIÓN METODOLOGÍAS DE APRENDIZAJE
+    ======================================== -->
+  <section
+    id="metodologias-aprendizaje"
+    class="seccion-metodologias-aprendizaje"
+  >
+    <div class="contenedor-encabezado-metodologias-aprendizaje">
+      <h2 class="titulo-seccion-metodologias-aprendizaje">
+        METODOLOGÍAS DE APRENDIZAJE
+      </h2>
+      <p class="parrafo-descripcion-metodologias-aprendizaje">
+        Una pedagogía adaptada a cada etapa de desarrollo.
+      </p>
+    </div>
+    <article class="articulo-contenedor-tarjetas-metodologias">
+      <!-- Preescolar -->
+      <div class="tarjeta-metodologia-nivel-preescolar">
+        <h3 class="titulo-tarjeta-metodologia-preescolar">
+          PREESCOLAR: APRENDIZAJE BASADO EN EL JUEGO
+        </h3>
+        <p class="parrafo-subtitulo-metodologia-preescolar">
+          <strong class="texto-negrita-subtitulo-preescolar"
+            >Metodología:</strong
+          >
+          Pedagogía Lúdica y Constructivista.
+        </p>
+        <p class="parrafo-descripcion-metodologia-preescolar">
+          El juego es la base para explorar, descubrir y construir conocimiento.
+          Promovemos la libre expresión, la socialización y la estimulación
+          multisensorial a través de rincones de aprendizaje y proyectos
+          temáticos.
+        </p>
+        <p class="parrafo-objetivo-metodologia-preescolar">
+          <strong class="texto-negrita-objetivo-preescolar">Objetivo:</strong>
+          Desarrollo óptimo de la psicomotricidad y habilidades socioemocionales
+          como base para la Primaria.
+        </p>
+      </div>
+      <!-- Primaria -->
+      <div class="tarjeta-metodologia-nivel-primaria">
+        <h3 class="titulo-tarjeta-metodologia-primaria">
+          PRIMARIA: DESARROLLO DE COMPETENCIAS
+        </h3>
+        <p class="parrafo-subtitulo-metodologia-primaria">
+          <strong class="texto-negrita-subtitulo-primaria">Metodología:</strong>
+          Aprendizaje Basado en Proyectos (ABP) e Integración Bilingüe.
+        </p>
+        <p class="parrafo-descripcion-metodologia-primaria">
+          Conectamos el currículo con la realidad mediante el trabajo
+          colaborativo, la investigación y la solución de problemas. Incluye
+          programa bilingüe intensivo.
+        </p>
+        <p class="parrafo-objetivo-metodologia-primaria">
+          <strong class="texto-negrita-objetivo-primaria">Objetivo:</strong>
+          Consolidar competencias básicas y potenciar el pensamiento crítico y
+          la fluidez en inglés.
+        </p>
+      </div>
+      <!-- Bachillerato -->
+      <div class="tarjeta-metodologia-nivel-bachillerato">
+        <h3 class="titulo-tarjeta-metodologia-bachillerato">
+          BACHILLERATO: ENFOQUE PREUNIVERSITARIO
+        </h3>
+        <p class="parrafo-subtitulo-metodologia-bachillerato">
+          <strong class="texto-negrita-subtitulo-bachillerato"
+            >Metodología:</strong
+          >
+          Aprendizaje Basado en Retos (ABR) y Cátedra de Investigación.
+        </p>
+        <p class="parrafo-descripcion-metodologia-bachillerato">
+          Trabajamos con retos complejos que simulan situaciones reales y
+          fomentan la autonomía, la argumentación y la especialización en áreas
+          de interés.
+        </p>
+        <p class="parrafo-objetivo-metodologia-bachillerato">
+          <strong class="texto-negrita-objetivo-bachillerato">Objetivo:</strong>
+          Excelencia académica y preparación integral para la universidad y la
+          vida profesional.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section class="areas-destacadas">
+    <h2>INVESTIGACIÓN Y PROYECCIÓN SOCIAL</h2>
+
+    <div class="cards-container">
+      <a href="#modal2-0" class="card" data-index="0">
+        <img src="/static/core/img/tallerpadres.jpeg" alt="Inglés" />
+        <h3>Talleres de padres</h3>
+      </a>
+
+      <a href="#modal2-1" class="card" data-index="1">
+        <img src="/static/core/img/primerascomuniones.jpeg" alt="Deportes" />
+        <h3>Primeras comuniones</h3>
+      </a>
+
+      <a href="#modal2-3" class="card" data-index="3">
+        <img src="/static/core/img/salidaspedagogicas.jpeg" alt="Robótica" />
+        <h3>Salidas pedagógicas</h3>
+      </a>
+
+      <a href="#modal2-4" class="card" data-index="4">
+        <img src="/static/core/img/dialuz.jpeg" alt="Danzas" />
+        <h3>El día de la luz 11°</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Modales (sin cambios, conservando diseño y funcionalidad) -->
+  <!-- Modal Inglés -->
+  <div id="modal2-0" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Talleres de padres</h2>
+      <img src="{% static 'core/img/tallerpadres.jpeg' %}" alt="Inglés" />
+      <p>
+        Los talleres de padres fortalecen la relación entre familia y CEDHU,
+        brindando espacios de formación, diálogo y acompañamiento. Buscan
+        potenciar el bienestar integral de nuestros educandos a través del apoyo
+        activo de sus familias.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Deportes -->
+  <div id="modal2-1" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Primeras comuniones</h2>
+      <img
+        src="{% static 'core/img/primerascomuniones2.jpeg' %}"
+        alt="Deportes"
+      />
+      <p>
+        Este proceso espiritual promueve valores de fe, comunidad y crecimiento
+        interior. Acompañamos a nuestros educandos y sus familias en una
+        vivencia significativa que fortalece su formación humana y
+        trascendente..
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Robótica -->
+  <div id="modal2-3" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>Salidas pedagógicas</h2>
+      <img
+        src="{% static 'core/img/salidaspedagogicas2.jpeg' %}"
+        alt="Robótica"
+      />
+      <p>
+        Las salidas pedagógicas permiten que los educandos aprendan desde la
+        experiencia directa. Favorecen la observación, el análisis y la conexión
+        con su entorno, enriqueciendo la comprensión de los contenidos
+        trabajados en el CEDHU
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Danzas -->
+  <div id="modal2-4" class="modal">
+    <a href="#!" class="modal-overlay"></a>
+    <div class="modal-content modal-green">
+      <a href="#!" class="close-btn">&times;</a>
+      <h2>El día de la luz grado 11°</h2>
+      <img src="{% static 'core/img/dialuz2.jpeg' %}" alt="Danzas" />
+      <p>
+        El Día de la Luz es una celebración simbólica que reconoce el cierre de
+        un ciclo y el inicio de una nueva etapa para los educandos de grado 11°.
+        Un espacio de reflexión, gratitud y proyección hacia su futuro personal
+        y académico.
+      </p>
+    </div>
+  </div>
+
+  <!-- Botón Volver Arriba -->
+  <button id="btn-volver-arriba" aria-label="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  {% endblock %} {% block extra_js %}
+  <script src="{% static 'core/js/oferta_educativa.js' %}"></script>
+  {% endblock %}
+</div>

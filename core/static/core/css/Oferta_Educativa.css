@@ -1,0 +1,1029 @@
+/* =====================================
+   VARIABLES CSS
+===================================== */
+:root {
+  --max-width-content: 1200px;
+  --max-width-section: 1400px;
+  --padding-section: 60px 20px;
+  --radius-global: 12px;
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition-base: all 0.3s ease;
+  --color-primary: #10B65C;
+  --color-primary-dark: #10B65C;
+  --color-light: #ffffff;
+  --color-accent: #19F37E;
+}
+
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
+.Contenedor-del-todo {
+  max-width: 1225px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border-radius: 20px;
+}
+
+/* =====================================
+   SECCIÓN HERO PRINCIPAL (Banner completo)
+===================================== */
+.modelo-educativo {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background: url("../img/EDUCANDOS-PEDAGOGIA.jpeg") no-repeat center/cover;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: flex-end;   /* TEXTO ABAJO */
+  justify-content: flex-start; 
+  padding: 40px 80px 20px; /* espacio inferior */
+}
+
+.modelo-educativo::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%; /* controla qué tanto sube el degradado */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,   /* muy oscuro abajo */
+    rgba(0, 0, 0, 0.3) 40%,  /* se va aclarando */
+    rgba(0, 0, 0, 0.0) 100%  /* totalmente transparente arriba */
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.modelo-educativo .hero-content {
+  
+  width: 100%;
+  max-width: 1200px; /* mismo ancho que las tarjetas */
+  margin: 0 auto;    /* centra el contenido */
+  padding: 0 20px;   /* respiro lateral */
+  text-align: left;  /* alineación igual a las tarjetas */
+  position: relative;
+  z-index: 2;
+}
+
+.modelo-educativo .hero-content h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: none; /* en la imagen NO hay sombra */
+  opacity: 1;
+  transform: none;
+  animation: none; /* si quieres efecto, déjamelo y lo ajusto */
+}
+
+.modelo-educativo .hero-content p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase; /* como en la imagen */
+  letter-spacing: 1.5px; /* separa letras */
+  max-width: 600px; /* evita que tome todo el ancho */
+  line-height: 1.6;
+  text-shadow: none;
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.modelo-educativo .hero-content p {
+  position: relative;
+  padding-left: 20px;
+}
+
+.modelo-educativo .hero-content p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 5px;
+  height: 85%;
+  background: #f7c600; /* amarillo */
+}
+
+/* animación */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .modelo-educativo {
+    padding: 28px 16px;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modelo-educativo {
+    padding: 20px 12px;
+    min-height: 280px;
+  }
+}
+
+/* =====================================
+   SECCIÓN OBJETIVO INSTITUCIONAL (Ancho completo)
+===================================== */
+.seccion-objetivo-institucional {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: linear-gradient(135deg, #10B65C 0%, #0D9849 100%);
+  padding: 80px 20px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.contenedor-completo-objetivos {
+  max-width: var(--max-width-content);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Objetivo General */
+.contenedor-objetivo-general {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.titulo-objetivo-general {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.caja-contenido-objetivo-general {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caja-contenido-objetivo-general:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.parrafo-objetivo-general {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.8;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Objetivos Específicos */
+.contenedor-objetivos-especificos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 100%;
+}
+
+.titulo-objetivos-especificos-general {
+  grid-column: 1 / -1;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #FFD700;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  margin: 0;
+  text-align: center;
+}
+
+.tarjeta-objetivo-especifico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenido-objetivo-especifico {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenido-objetivo-especifico:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.parrafo-objetivo-especifico {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contenedor-objetivos-especificos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =====================================
+   SECCIÓN METODOLOGÍAS DE APRENDIZAJE (Banner)
+===================================== */
+.seccion-metodologias-aprendizaje {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: url("../img/EDUCANDOSINVESTIGANDO1.jpeg") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light);
+  text-align: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.seccion-metodologias-aprendizaje::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 25, 25, 0.55);
+}
+
+.contenedor-encabezado-metodologias-aprendizaje {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+  max-width: var(--max-width-content);
+}
+
+.titulo-seccion-metodologias-aprendizaje {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #19F37E;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.9),
+               0 0 10px #10B65C;
+}
+
+.parrafo-descripcion-metodologias-aprendizaje {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  line-height: 1.8;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+.articulo-contenedor-tarjetas-metodologias {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: var(--max-width-content);
+  width: 100%;
+}
+
+.tarjeta-metodologia-nivel-preescolar,
+.tarjeta-metodologia-nivel-primaria,
+.tarjeta-metodologia-nivel-bachillerato {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: var(--radius-global);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: var(--transition-base);
+}
+
+.tarjeta-metodologia-nivel-preescolar:hover,
+.tarjeta-metodologia-nivel-primaria:hover,
+.tarjeta-metodologia-nivel-bachillerato:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(16,182,92,0.5);
+}
+
+.titulo-tarjeta-metodologia-preescolar,
+.titulo-tarjeta-metodologia-primaria,
+.titulo-tarjeta-metodologia-bachillerato {
+  color: #19F37E;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+.parrafo-subtitulo-metodologia-preescolar,
+.parrafo-subtitulo-metodologia-primaria,
+.parrafo-subtitulo-metodologia-bachillerato {
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.texto-negrita-subtitulo-preescolar,
+.texto-negrita-subtitulo-primaria,
+.texto-negrita-subtitulo-bachillerato {
+  font-weight: 700;
+}
+
+.parrafo-descripcion-metodologia-preescolar,
+.parrafo-descripcion-metodologia-primaria,
+.parrafo-descripcion-metodologia-bachillerato {
+  font-size: 1rem;
+  color: #f0f0f0;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.parrafo-objetivo-metodologia-preescolar,
+.parrafo-objetivo-metodologia-primaria,
+.parrafo-objetivo-metodologia-bachillerato {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.7;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.texto-negrita-objetivo-preescolar,
+.texto-negrita-objetivo-primaria,
+.texto-negrita-objetivo-bachillerato {
+  font-weight: 700;
+}
+
+.areas-destacadas {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background: linear-gradient(135deg, #10B65C 0%, #0D9849 100%);
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.areas-destacadas h2 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.35);
+    letter-spacing: 1px;
+}
+
+
+
+
+/* Contenedor de tarjetas en fila */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: var(--max-width-content);
+    margin: auto;
+}
+
+/* TARJETAS */
+.card {
+    flex: 1 1 calc(20% - 16px);
+    min-width: 220px;
+    margin: 0;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    transition: transform .3s ease, box-shadow .3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0D9849;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+
+
+/* ============================= */
+/*          MODAL GENERAL        */
+/* ============================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    /* Corrección: evitar que el navbar lo tape */
+    z-index: 5000 !important;
+
+    /* Evitar recortes */
+    overflow-y: auto;
+}
+
+.modal:target {
+    display: flex;
+}
+
+/* Fondo oscuro */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+
+    z-index: 4999 !important;
+}
+
+
+
+/* ============================= */
+/*        CONTENIDO MODAL        */
+/* ============================= */
+
+.modal-content.modal-green {
+    position: relative;
+    background: linear-gradient(135deg, #10B65C 0%, #0D9849 100%);
+    color: #fff;
+    width: 85%;
+    max-width: 650px;
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    animation: aparecer .3s ease;
+    text-align: center;
+
+    /* Corrección: siempre encima */
+    z-index: 5001 !important;
+
+    /* Evitar recortes */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* TITULO */
+.modal-content.modal-green h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.35);
+}
+
+/* IMAGEN */
+.modal-content.modal-green img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+
+/* PARRAFO */
+.modal-content.modal-green p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+/* BOTÓN CERRAR */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 32px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    z-index: 5002 !important;
+    transition: color .2s;
+}
+
+.close-btn:hover {
+    color: #FFD700;
+}
+
+/* ANIMACIÓN */
+@keyframes aparecer {
+    from { transform: scale(.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* ============================= */
+/*      RESPONSIVE MOVILES       */
+/* ============================= */
+
+@media (max-width: 480px) {
+    .modal {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
+    .modal-content.modal-green {
+        width: 95%;
+        padding: 20px 15px;
+        border-radius: 15px;
+        max-height: 85vh;
+    }
+
+    .modal-content.modal-green img {
+        max-height: 180px;
+    }
+
+    .modal-content.modal-green h2 {
+        font-size: 1.8rem;
+    }
+
+    .modal-content.modal-green p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+   SECCIÓN ESCUELA DE PADRES (Ancho completo)
+===================================== */
+.seccion-escuela-padres {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: #10B65C;
+  padding: 60px 20px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.contenedor-principal-escuela-padres {
+  max-width: var(--max-width-content);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Columna Izquierda - Texto */
+.columna-izquierda-escuela-padres {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulo-seccion-escuela-padres {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.parrafo-texto-escuela-padres {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  font-weight: 500;
+}
+
+/* Columna Derecha - Imagen */
+.columna-derecha-escuela-padres {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagen-escuela-padres {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  background: #000;
+}
+
+.imagen-escuela-padres:hover {
+  transform: scale(1.02);
+}
+
+/* =====================================
+   SECCIÓN INVESTIGACIÓN Y PROYECCIÓN SOCIAL (Banner)
+===================================== */
+.seccion-investigacion-proyeccion-social {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: url("../img/graduadabachillaer.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light);
+  text-align: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.seccion-investigacion-proyeccion-social::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 25, 25, 0.55);
+  z-index: 1;
+}
+
+.contenedor-encabezado-investigacion {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+  max-width: var(--max-width-content);
+}
+
+.titulo-seccion-investigacion {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #19F37E;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.9),
+               0 0 10px #10B65C;
+}
+
+.titulo-seccion-investigacion i,
+.icono-microscope-investigacion {
+  margin-right: 8px;
+}
+
+.parrafo-descripcion-investigacion {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  line-height: 1.8;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Historia de Investigación */
+.articulo-historia-investigacion {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width-content);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  text-align: center;
+  border-radius: var(--radius-global);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+  margin-bottom: 40px;
+  transition: var(--transition-base);
+}
+
+.articulo-historia-investigacion:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(16,182,92,0.5);
+}
+
+.titulo-historia-investigacion {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #19F37E;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+.titulo-historia-investigacion i,
+.icono-book-historia-investigacion {
+  margin-right: 8px;
+}
+
+.parrafo-texto-historia-investigacion,
+.parrafo-proposito-investigacion {
+  font-size: 1rem;
+  color: #f0f0f0;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.texto-negrita-anio-investigacion,
+.texto-negrita-red-colsi,
+.texto-negrita-analisis-critico {
+  font-weight: 700;
+}
+
+/* Liderazgo y Coordinación */
+.articulo-liderazgo-coordinacion-investigacion {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width-content);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  text-align: center;
+  border-radius: var(--radius-global);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+  margin-bottom: 40px;
+  transition: var(--transition-base);
+}
+
+.articulo-liderazgo-coordinacion-investigacion:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(16,182,92,0.5);
+}
+
+.titulo-liderazgo-coordinacion-investigacion {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #19F37E;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+.titulo-liderazgo-coordinacion-investigacion i,
+.icono-users-liderazgo-investigacion {
+  margin-right: 8px;
+}
+
+.contenedor-grilla-liderazgo-investigacion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.tarjeta-directora-institucional,
+.tarjeta-coordinadores-investigacion {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: var(--radius-global);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.tarjeta-directora-institucional:hover,
+.tarjeta-coordinadores-investigacion:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 24px rgba(16,182,92,0.5);
+}
+
+.titulo-rol-directora-institucional,
+.titulo-rol-coordinadores-investigacion {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #19F37E;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.titulo-rol-directora-institucional i,
+.titulo-rol-coordinadores-investigacion i,
+.icono-user-tie-directora,
+.icono-chalkboard-teacher-coordinadores {
+  margin-right: 8px;
+}
+
+.parrafo-nombre-directora-institucional,
+.parrafo-nombre-coordinador-metodologia,
+.parrafo-nombre-coordinadora-semilleros {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.texto-negrita-nombre-directora,
+.texto-negrita-coordinador-diego,
+.texto-negrita-coordinadora-nydia {
+  font-weight: 700;
+}
+
+.parrafo-descripcion-directora-institucional,
+.parrafo-descripcion-coordinadores {
+  font-size: 1rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* =====================================
+   RESPONSIVE - TABLETS
+===================================== */
+@media (max-width: 1024px) {
+  .contenedor-principal-escuela-padres {
+    gap: 30px;
+  }
+
+  .contenedor-grilla-profesores-robotica,
+  .contenedor-grilla-liderazgo-investigacion {
+    gap: 30px;
+  }
+}
+
+/* =====================================
+   RESPONSIVE - MÓVILES
+===================================== */
+@media (max-width: 768px) {
+  /* Hero Principal */
+  .seccion-hero-principal-modelo-educativo,
+  .seccion-metodologias-aprendizaje,
+  .seccion-robotica-educativa,
+  .seccion-investigacion-proyeccion-social {
+    background-attachment: scroll;
+    min-height: 300px;
+    padding: 30px 15px;
+  }
+
+  /* Objetivos Institucionales */
+  .seccion-objetivo-institucional {
+    padding: 60px 15px;
+  }
+
+  .contenedor-completo-objetivos {
+    gap: 40px;
+  }
+
+  .caja-contenido-objetivo-general {
+    padding: 30px 25px;
+  }
+
+  .contenedor-objetivos-especificos {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contenido-objetivo-especifico {
+    padding: 25px 20px;
+    min-height: 180px;
+  }
+
+  /* Escuela de Padres */
+  .contenedor-principal-escuela-padres {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .columna-izquierda-escuela-padres,
+  .columna-derecha-escuela-padres {
+    padding: 10px;
+  }
+
+  .parrafo-texto-escuela-padres {
+    padding: 20px;
+  }
+
+  .imagen-escuela-padres {
+    min-height: 300px;
+    max-width: 100%;
+  }
+
+  /* Tarjetas y Grillas */
+  .contenedor-grilla-profesores-robotica,
+  .contenedor-grilla-liderazgo-investigacion {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta-profesor-robotica,
+  .tarjeta-profesor-robotica-segundo {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* =====================================
+   RESPONSIVE - MÓVILES PEQUEÑOS
+===================================== */
+@media (max-width: 480px) {
+  .seccion-hero-principal-modelo-educativo,
+  .seccion-metodologias-aprendizaje,
+  .seccion-robotica-educativa,
+  .seccion-investigacion-proyeccion-social {
+    min-height: 250px;
+    padding: 20px 10px;
+  }
+
+  .seccion-objetivo-institucional {
+    padding: 40px 10px;
+  }
+
+  .caja-contenido-objetivo-general {
+    padding: 20px 15px;
+  }
+
+  .contenido-objetivo-especifico {
+    padding: 20px 15px;
+    min-height: 160px;
+  }
+
+  .articulo-contenedor-tarjetas-metodologias {
+    gap: 16px;
+  }
+
+  .tarjeta-metodologia-nivel-preescolar,
+  .tarjeta-metodologia-nivel-primaria,
+  .tarjeta-metodologia-nivel-bachillerato {
+    padding: 20px;
+  }
+
+  .articulo-historia-robotica,
+  .articulo-equipo-profesores-robotica,
+  .articulo-historia-investigacion,
+  .articulo-liderazgo-coordinacion-investigacion {
+    padding: 20px;
+  }
+
+  .parrafo-texto-escuela-padres {
+    padding: 15px;
+  }
+}
+
+/* =====================================
+   ANIMACIONES
+===================================== */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

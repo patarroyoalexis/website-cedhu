@@ -1,0 +1,349 @@
+{% extends 'core/base.html' %} {% load static %} {% block title %}Inicio -
+CEDHU{% endblock %} {% block content %}
+<!-- Hero estilo Harvard (sin header y sin flechas) -->
+<section class="hero-slide">
+
+  <!-- SLIDE 2 AGREGAR UNA IMAGEN POR CUESTIÓN DE SEO-->
+  <div class="slide active">
+    <img src="{% static 'core/img/Banner-Cedhu-Destacado.png' %}" alt="primer puesto prueba saber cedhu 2025" />
+    <div class="overlay">
+      <h2 class="subtitle"><span></span></h2>
+      <h1 class="title"></h1>
+    </div>
+  </div>
+
+  <!-- SLIDE 1 CON VIDEO -->
+  <div class="slide">
+    <video autoplay muted playsinline disablepictureinpicture>
+      <source
+        src="{% static 'core/videos/Presentacioncedhu.mp4' %}"
+        type="video/mp4"
+      />
+    </video>
+    <div class="overlay">
+      {% comment %}
+      <h2 class="subtitle">
+        SER FELICES EN EL<span> PROCESO</span>DE <br /><b>ENSEÑAR Y APRENDER</b>
+      </h2>
+      {% endcomment %}
+    </div>
+  </div>
+  
+
+  <!-- SLIDE 3 -->
+  {% comment %} <div class="slide">
+    <video autoplay muted playsinline disablepictureinpicture>
+      <source
+        src="{% static 'core/videos/videoiniciocarrusel.mp4' %}"
+        type="video/mp4"
+      />
+    </video>
+    <div class="overlay">
+      <h1 class="subtitle">
+        ELIGE TU <span>FUTURO,</span><br />ELIGE <strong>CEDHU</strong>
+      </h1>
+    </div>
+  </div> {% endcomment %}
+
+  <!-- PUNTOS -->
+  <div class="indicators">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <button class="hero-control"
+        id="heroToggle"
+        aria-label="Pausar animación"
+        aria-pressed="false">
+  ⏸
+</button>
+</section>
+<div class="flow-invitation"></div>
+<div class="contenido">
+  <!-- Sección Bienvenida -->
+  <section id="bienvenida" class="reveal">
+    <div>
+      <h2>BIENVENIDOS AL CEDHU</h2>
+      <p class="bienvenida-text">
+        Formamos educandos con valores y excelencia académica, fundamentados en
+        el respeto por la dignidad humana, la convivencia armónica y la
+        corresponsabilidad entre familia, educando e institución, promoviendo
+        una formación integral que trasciende lo académico y fortalece el ser,
+        el saber y el convivir.
+      </p>
+      <a href="{% url 'Nosotros' %}" class="bienvenida-link">
+        Conoce nuestra filosofía, principios y horizonte institucional.
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================
+     SECCIÓN NIVELES EDUCATIVOS
+  ============================== -->
+  <section class="niveles-educativos">
+    <h2>NIVELES EDUCATIVOS</h2>
+    <p>
+      Una educación de calidad para la formación del educando en todos los
+      campos del conocimiento, basada en preparación humanista, científica y
+      artística.
+    </p>
+
+    <div class="niveles-container">
+      <!-- INICIAL -->
+      <div class="nivel-card" onclick="toggleInfo(this)">
+        <div class="nivel-content">
+          <img
+            src="{% static 'core/img/niñosprimaria.jpg' %}"
+            alt="Nivel Inicial"
+          />
+          <h3>INICIAL</h3>
+        </div>
+        <div class="nivel-info">
+          <p>
+            En este nivel, se fomenta el desarrollo integral de los niños a
+            través del juego, la exploración y el descubrimiento. Se fortalecen
+            habilidades cognitivas, sociales y emocionales.
+          </p>
+        </div>
+      </div>
+
+      <!-- PRIMARIA -->
+      <div class="nivel-card" onclick="toggleInfo(this)">
+        <div class="nivel-content">
+          <img
+            src="{% static 'core/img/iamgenniños.jpg' %}"
+            alt="Nivel Primaria"
+          />
+          <h3>PRIMARIA</h3>
+        </div>
+        <div class="nivel-info">
+          <p>
+            En primaria, se consolidan los aprendizajes fundamentales y se
+            promueve el pensamiento crítico, la autonomía y la responsabilidad
+            personal en el proceso educativo fomentando nuestro énfasis en
+            inglés.
+          </p>
+        </div>
+      </div>
+
+      <!-- SECUNDARIA -->
+      <div class="nivel-card" onclick="toggleInfo(this)">
+        <div class="nivel-content">
+          <img
+            src="{% static 'core/img/graduadabachillaer.png' %}"
+            alt="Nivel Secundaria"
+          />
+          <h3>SECUNDARIA</h3>
+        </div>
+        <div class="nivel-info">
+          <p>
+            En secundaria, se fortalecen las competencias académicas, sociales y
+            tecnológicas culminando su proceso formativo con la certificación
+            TOEFL Junior Standard, preparando a los educandos para los desafíos
+            universitarios y profesionales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================
+     SECCIÓN EDUCACIÓN HUMANISTA
+  ===================================== -->
+  <section class="educacion-humanista">
+    <h2>EDUCACIÓN CON CRITERIO CIENTÍFICO Y HUMANISTA</h2>
+
+    <div class="features-container">
+      <!-- 1 -->
+      <div class="feature-card">
+        <div class="icon-wrapper">
+          <img
+            src="{% static 'core/img/Valores.jpeg' %}"
+            alt="Formación con valores"
+          />
+        </div>
+        <h3>Principios y Valores</h3>
+        <p>
+          El desarrollo humano y la sana convivencia se fortalecen a través del
+          Student Emotional Support Room, sus talleres y la hora de valores.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="feature-card">
+        <div class="icon-wrapper">
+          <img
+            src="{% static 'core/img/Tuna.JPEG ' %}"
+            alt="Crecimiento Integral"
+          />
+        </div>
+        <h3>Formación Integral</h3>
+        <p>
+          El desarrollo de habilidades y talentos se potencia a través del salón
+          de danzas, English Adventure Room, dibujo técnico, sala de lectura y
+          un completo espacio a la Tuna y música.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="feature-card">
+        <div class="icon-wrapper">
+          <img
+            src="{% static 'core/img/Laboratorio fisica.jpg' %}"
+            alt="Ciencia y Tecnología"
+          />
+        </div>
+        <h3>Ciencia y Tecnología</h3>
+        <p>
+          El desarrollo de habilidades científicas y tecnológicas se potencia
+          mediante el STEAM Mathematics Classroom y los laboratorios de inglés,
+          robótica, física y química.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Preguntas frecuentes -->
+  <section class="faq">
+    <h2>PREGUNTAS FRECUENTES</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <h3>¿Qué métodos de pago están disponibles para matrícula?</h3>
+        <p>
+          Se acepta transferencia electrónica, consignación en sucursal o
+          corresponsal Banco Caja Social, transferencia electrónica o pago por
+          PSE. <strong>No se recibe efectivo.</strong>
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Desde qué edad puede ingresar mi hijo al CEDHU?</h3>
+        <p>La edad mínima para pertenecer al Cedhu es de 2 años.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿El CEDHU cuenta con transporte escolar?</h3>
+        <p>Los padres contratan directamente las rutas.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Qué lúdicas están disponibles?</h3>
+        <p>
+          Se dispone de actividades cómo baloncesto, voleibol, fútbol, tenis de
+          campo y de mesa, natación, patinaje, gimnasia, robótica, danzas,
+          futuros cientificos, ajedrez, música, judo, karate do, boxeo, ultimate
+          frisbee.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cómo es el proceso de admisión?</h3>
+        <p>
+          La familia (papa, mamá y educando) realizan un reconocimiento de las
+          instalaciones y en tesorería se instruye en los pasos a seguir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección CTA -->
+  {% comment %}
+  <section class="cta-institucional">
+    <div class="cta-contenido">
+      <h2>¿QUIERES HACER PARTE DEL CEDHU?</h2>
+      <p>
+        Conoce nuestro proceso de admisión y acompáñanos en la formación
+        integral de tu hijo.
+      </p>
+
+      <div class="cta-botones">
+        <a href="{% url 'Admisiones' %}" class="btn-cta principal">
+          Proceso de admisión
+        </a>
+        <!--
+        <a href="{% url 'Contacto' %}" class="btn-cta secundario">
+          Contáctanos
+        </a>
+        -->
+        <a href="#" class="btn-cta secundario"> Contáctanos </a>
+      </div>
+    </div>
+  </section>
+  {% endcomment %}
+
+  <!-- Sección Ubicación (Mantener) -->
+  <section class="ubicacion">
+    <h2>¿DÓNDE ESTAMOS UBICADOS?</h2>
+    <div class="container-ubicación">
+      <div class="mapa-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.901119698392!2d-72.9176252!3d5.727380699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a460c16051373%3A0x40d231adfaa1a881!2sCentro%20de%20Desarrollo%20Humano%20CEDHU!5e0!3m2!1ses!2sco!4v1768505351805!5m2!1ses!2sco"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="mapa-responsive streetview">
+        <div class="map-overlay">
+          <span
+            data-desktop="Haz doble clic para explorar Street View"
+            data-mobile="Mantén presionado para explorar Street View"
+          ></span>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!4v1755708493503!6m8!1m7!1saSQjlOZeDjmZ0HaFBSwViA!2m2!1d5.727254717227505!2d-72.91765621114655!3f30.646103925190662!4f5.536479257674657!5f0.4000000000000002"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ============================================
+    // BARRA DE PROGRESO DE LECTURA - CEDHU
+    // ============================================
+    function updateReadingProgress() {
+      const winScroll = document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+
+      let progressBar = document.getElementById("reading-progress");
+      if (!progressBar) {
+        progressBar = document.createElement("div");
+        progressBar.id = "reading-progress";
+        document.body.prepend(progressBar);
+      }
+      progressBar.style.width = scrolled + "%";
+    }
+
+    // Crear estilos para la barra
+    const style = document.createElement("style");
+    style.textContent = `
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10B65C 0%, #FFE600 100%);
+      z-index: 9999;
+      transition: width 0.15s ease-out;
+      box-shadow: 0 2px 4px rgba(14, 168, 82, 0.25);
+    }
+  `;
+    document.head.appendChild(style);
+
+    // Escucha el scroll
+    window.addEventListener("scroll", updateReadingProgress);
+  });
+</script>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'core/js/home.js' %}?v=3"></script>
+{% endblock %}

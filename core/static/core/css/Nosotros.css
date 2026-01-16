@@ -1,0 +1,1297 @@
+/* =====================================
+   VARIABLES GLOBALES
+   (No se tocan nav ni footer)
+===================================== */
+
+:root {
+  --color-primary: #161d19;
+  --color-primary-dark: #10B65C;
+  --color-accent: #10B65C;
+  --color-accent-strong: #000000;
+  --color-text: #000000;
+  --color-light: #FFFFFF;
+  --color-muted: #929292;
+
+  --shadow-soft: 0 6px 18px rgba(0,0,0,0.08);
+  --shadow-card: 0 12px 28px rgba(0,0,0,0.10);
+  --shadow-strong: 0 12px 32px rgba(0,0,0,0.12);
+  --shadow-hover: 0 10px 25px rgba(0,0,0,0.15);
+
+  --transition-base: all .35s ease;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+}
+/* Accesibilidad básica */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+/* =====================================
+   CONOCE CEDHU (HERO)
+===================================== */
+
+.conoce-cedhu {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background: url("../img/PANORAMICACDEHU.JPG") no-repeat center/cover;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: flex-end;   /* TEXTO ABAJO */
+  justify-content: flex-start; 
+  padding: 40px 80px 20px; /* espacio inferior */
+}
+
+.conoce-cedhu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%; /* controla qué tanto sube el degradado */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,   /* muy oscuro abajo */
+    rgba(0, 0, 0, 0.3) 40%,  /* se va aclarando */
+    rgba(0, 0, 0, 0.0) 100%  /* totalmente transparente arriba */
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.conoce-cedhu .hero-content {
+  
+  width: 100%;
+  max-width: 1200px; /* mismo ancho que las tarjetas */
+  margin: 0 auto;    /* centra el contenido */
+  padding: 0 20px;   /* respiro lateral */
+  text-align: left;  /* alineación igual a las tarjetas */
+
+
+  position: relative;
+  z-index: 2;
+}
+
+.conoce-cedhu .hero-content h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: none; /* en la imagen NO hay sombra */
+  opacity: 1;
+  transform: none;
+  animation: none; /* si quieres efecto, déjamelo y lo ajusto */
+}
+
+.conoce-cedhu .hero-content p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase; /* como en la imagen */
+  letter-spacing: 1.5px; /* separa letras */
+  max-width: 600px; /* evita que tome todo el ancho */
+  line-height: 1.6;
+  text-shadow: none;
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.conoce-cedhu .hero-content p {
+  position: relative;
+  padding-left: 20px;
+}
+
+.conoce-cedhu .hero-content p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 5px;
+  height: 85%;
+  background: #f7c600; /* amarillo */
+}
+
+/* animación */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .conoce-cedhu {
+    padding: 28px 16px;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .conoce-cedhu {
+    padding: 20px 12px;
+    min-height: 280px;
+  }
+}
+
+/* =====================================
+   SECCIÓN COMUNICACIÓN (HERO INTERNO)
+===================================== */
+.section.comunicacion {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: url("../img/imagencarruser4.jpg") no-repeat center/cover;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light);
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.section.comunicacion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 25, 25, 0.479);
+}
+.section.comunicacion .hero-content { z-index: 2; max-width: 900px; }
+.section.comunicacion h2 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #19F37E;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.9),
+             0 0 10px #10B65C;
+}
+
+.section.comunicacion p {
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  line-height: 1.8;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+@media (max-width: 768px) {
+  .section.comunicacion { padding: 28px 16px; min-height: 320px; }
+}
+@media (max-width: 480px) {
+  .section.comunicacion { padding: 20px 12px; min-height: 280px; }
+}
+
+/* ====== SECCIÓN BANDERA Y UNIFORME ====== */
+.bandera-uniforme {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.bandera-uniforme-content {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.bandera-box,
+.uniforme-box {
+  flex: 1 1 500px;
+  min-width: 300px;
+  background: transparent;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition-base);
+}
+
+.bandera-box:hover,
+.uniforme-box:hover {
+  box-shadow: none;
+}
+
+.bandera-box h2,
+.uniforme-box h2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: black;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bandera-box p,
+.uniforme-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.bandera-box img,
+.uniforme-box img {
+  width: 100%;
+  max-width: 450px;
+  height: 350px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  background: transparent;
+  box-shadow: none;
+  transition: var(--transition-base);
+}
+
+.bandera-box img:hover,
+.uniforme-box img:hover {
+  transform: translateY(-6px);
+  box-shadow: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .bandera-uniforme-content {
+    gap: 24px;
+  }
+  .bandera-box img,
+  .uniforme-box img {
+    height: 280px;
+  }
+}
+
+/* =====================================
+   SECCIÓN FILOSOFÍA (HERO INTERNO)
+===================================== */
+.section.filosofia {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: url("../img/FILOSOFIA2.jpeg") no-repeat center/cover;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light);
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.section.filosofia::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 25, 25, 0.479);
+  z-index: 1;
+}
+
+.section.filosofia .hero-content {
+  z-index: 2;
+  max-width: 900px;
+}
+
+.section.filosofia h2 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #19F37E;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+}
+
+.section.filosofia p {
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  line-height: 1.8;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* ...continúa exactamente igual al tuyo ... */
+
+
+@media (max-width: 768px) {
+  .section.filosofia {
+    padding: 28px 16px;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section.filosofia {
+    padding: 20px 12px;
+    min-height: 280px;
+  }
+}
+
+/* =====================================
+   SECCIONES BASE (CONTENEDOR)
+===================================== */
+.section {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #FFF3B0 100%);
+  position: relative;
+  overflow: visible;
+}
+.section.alt { background: #F9F9F9; }
+
+.section h2 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.section p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 18px;
+  color: var(--color-text);
+}
+.section img {
+  max-width: 100%;
+  border-radius: 16px;
+  margin: 28px auto 0;
+  display: block;
+  box-shadow: var(--shadow-strong);
+  transition: var(--transition-base);
+}
+.section img:hover { transform: scale(1.03); box-shadow: var(--shadow-hover); }
+
+@media (max-width: 768px) {
+  .section { padding: 56px 16px; }
+}
+
+/* =====================================
+   LEMA SECTION
+===================================== */
+.lema-section {
+  background: linear-gradient(135deg, #FFF9CC 0%, var(--color-accent) 100%);
+  padding: 30px 15px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+.lema-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.lema-text { flex: 1; min-width: 240px; }
+.lema-text h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.lema-text p { font-size: 1rem; line-height: 1.5; color: var(--color-text); }
+.lema-text .highlight { color: var(--color-primary); font-weight: 900; font-size: 1.05rem; }
+.lema-image { flex: 1; min-width: 240px; text-align: center; }
+.lema-image img {
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-base);
+}
+.lema-image img:hover { transform: scale(1.03); }
+
+/* =====================================
+   BOTÓN "VER MÁS"
+===================================== */
+.more-text { display: none; margin-top: 12px; 
+}
+.toggle-btn {
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-light);
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 16px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-soft);
+}
+.toggle-btn:hover { background: var(--color-primary-dark); transform: scale(1.03); }
+
+/* =====================================
+   GRID DE IMÁGENES
+===================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+.grid img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-soft);
+}
+.grid img:hover { transform: scale(1.03); box-shadow: var(--shadow-hover); }
+
+/* =====================================
+   STAFF CARDS (FLIP 3D)
+===================================== */
+.staff {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 260px));
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+.staff-card { perspective: 1000px; cursor: pointer; outline: none; }
+.staff-card-inner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform .8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.staff-card.flipped .staff-card-inner { transform: rotateY(180deg); }
+
+.staff-card-front,
+.staff-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-card);
+  background: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.staff-card-front img {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.staff-card-front h4 { margin: 8px 0 4px; color: var(--color-primary); font-size: 1.05rem; }
+.staff-card-front p { font-size: .9rem; color: var(--color-muted); text-align: center; }
+.staff-card-back {
+  transform: rotateY(180deg);
+  color: var(--color-text);
+  font-size: .9rem;
+  text-align: center;
+  line-height: 1.5;
+  padding: 22px;
+}
+
+/* Accesibilidad visual al enfocar cartas con teclado */
+.staff-card:focus-visible .staff-card-inner,
+.staff-card:hover .staff-card-inner { box-shadow: var(--shadow-hover); }
+
+
+
+/* =====================================
+   MISIÓN & VISIÓN
+===================================== */
+.section.mision-vision {
+  background: transparent !important; /* quita degradado heredado */
+  box-shadow: none !important;
+}
+
+.mision-vision {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.mision-vision .box {
+  flex: 1;
+  min-width: 280px;
+  background: transparent !important; /* quita fondo blanco */
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: none !important;        /* elimina sombra */
+  border: none;                       /* opcional, más limpio */
+  display: flex;
+  flex-direction: column;
+}
+
+.mision-vision h2 {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.mision-vision p {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  text-align: justify;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+/* ==========================
+   SECCIÓN NUESTROS PRINCIPIOS
+============================== */
+.principios-section {
+  background: linear-gradient(135deg, #10B65C, #eaf0b2);
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Encabezado */
+.principios-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #000; /* Título negro */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.principios-section > p {
+  max-width: 850px;
+  margin: 0 auto 60px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #000; /* Texto descriptivo negro */
+}
+
+/* Contenedor principal - 2 columnas fijas */
+.principios-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px 40px;
+  justify-content: center;
+  align-items: start;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .principios-container {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+  }
+}
+
+/* Tarjeta individual */
+.principio-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.principio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  border-color: var(--color-primary-dark);
+}
+
+/* Contenido */
+.principio-content {
+  padding: 20px;
+}
+
+.principio-content h3 {
+  font-size: 1.25rem;
+  color: #000; /* Título negro */
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Info desplegable */
+.principio-info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: var(--color-light);
+  border-top: 2px solid var(--color-accent);
+}
+
+.principio-info p {
+  font-size: 1rem;
+  color: #333;
+  margin: 15px 20px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.principio-info.show {
+  max-height: 250px;
+  opacity: 1;
+  padding: 10px 0;
+}
+
+.principio-card.expanded {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* ================================
+   LÍNEA DE TIEMPO MODERNA CEDHU
+================================ */
+.timeline {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.timeline h2 {
+  font-size: 2.3rem;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* CONTENEDOR DE LOS AÑOS */
+.timeline-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* LÍNEA CENTRAL */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: linear-gradient(90deg, #10B65C, #c1f3d2);
+  z-index: 0;
+  transform: translateY(-50%);
+  border-radius: 10px;
+}
+
+/* CADA PUNTO / AÑO */
+.timeline-item {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  border: 3px solid #10B65C;
+  border-radius: 50%;
+  color: #000;
+  font-weight: 700;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(16,182,92,0.5);
+}
+
+.timeline-item.active {
+  background: #10B65C;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(16,182,92,0.7);
+}
+
+/* TEXTO DESCRIPTIVO */
+.timeline-content {
+  margin-top: 60px;
+  padding: 30px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff, #e8ffe9);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  color: #000;
+  font-size: 1.05rem;
+  transition: all 0.4s ease;
+}
+
+/* Animación al cambiar texto */
+#timeline-text {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+@media (max-width: 768px) {
+  .timeline-line {
+    z-index: 0; /* Mantiene la línea detrás */
+  }
+  .mobile-description {
+    position: relative;
+    z-index: 2; /* Hace que el texto esté encima */
+    background: #fff;
+    border: 1px solid #10B65C;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+  .timeline-line {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #10B65C, #c1f3d2);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* === Ajuste exclusivo para móviles (no altera el diseño desktop) === */
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #c1f3d2, #10B65C);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    border: 2px solid #10B65C;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .timeline-item.active {
+    background: #10B65C;
+    color: #fff;
+    box-shadow: 0 0 10px #10B65C;
+  }
+
+  .mobile-description {
+    display: none;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    margin-top: 8px;
+    padding: 12px 15px;
+    width: 85%;
+    max-width: 400px;
+    text-align: justify;
+    line-height: 1.5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .timeline-item.active + .mobile-description {
+    display: block;
+  }
+
+  .timeline-content {
+    display: none; /* Oculta el cuadro grande en móvil */
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+
+.timeline h2::before,
+.timeline h2::after {
+  content: none !important;
+}
+
+
+
+/* ==========================
+   SECCIÓN - NUESTROS ESPACIOS (VIDEO)
+========================== */
+.video-container {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  background-color: #000;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.video-container:hover {
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+  transition: box-shadow 0.3s ease;
+}
+
+/* ==========================
+   DESCRIPCIÓN - NUESTROS ESPACIOS
+========================== */
+.video-description {
+  max-width: 850px;
+  margin: 15px auto 40px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+
+
+/* ========== SECCIÓN ESTRUCTURA ORGANIZACIONAL ========== */
+.section.alt {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.section.alt h2 {
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.section.alt img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+/* Contenedor del acordeón */
+.accordion {
+  margin: 1rem auto;
+  max-width: 1100px;
+  border-radius: 8px;
+}
+
+/* Botón del acordeón */
+.accordion-btn {
+  background-color: #10B65C;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+.accordion-btn:hover {
+  background-color:#0d6d38;
+}
+
+/* Contenido del acordeón (cerrado por defecto) */
+.accordion-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* Grid de tarjetas del personal */
+.staff {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 1rem 0;
+}
+
+/* Tarjeta del personal */
+.staff-card {
+  width: 100%;
+  max-width: 260px;
+  min-height: 360px;
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+.staff-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.staff-card.flipped .staff-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Caras de la tarjeta */
+.staff-card-front,
+.staff-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.staff-card-front img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+/* Textos uniformes en tarjetas */
+.staff-card-front h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0;
+  color: #333;
+  text-align: center;
+  min-height: 2.4em; /* reserva espacio para 2 líneas */
+  display: -webkit-box;
+  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.staff-card-front p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.3rem 0 0;
+  text-align: center;
+  min-height: 2.4em; /* reserva espacio para 2 líneas */
+  display: -webkit-box;
+  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Texto del reverso */
+.staff-card-back {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* BOTÓN HIMNO CEDHU - Contenedor posicionado (sin cambios) */
+
+
+.himno-cedhu {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  z-index: 50;
+}
+
+/* Botón circular (sin cambios) */
+.himno-cedhu button {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #10B65C;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 13px;
+  transition: transform 0.25s ease;
+  overflow: visible; /* Importante para que las ondas salgan ordenadamente */
+}
+
+/* Ícono base (PLAY) detrás y CENTRADO (sin cambios significativos) */
+.himno-cedhu button::before {
+  content: "\f04b"; /* fa-play */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg); 
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  font-size: 40px; 
+  color: #042c16;
+  opacity: 0.40; 
+  z-index: 0;
+}
+
+/* Estado 'is-playing': Cambia a PAUSE y aplica la animación de pulso */
+.himno-cedhu button.is-playing::before {
+  content: "\f04c"; /* fa-pause */
+  opacity: 0.5;
+  animation: pulse 1.5s infinite ease-in-out; 
+}
+
+/* Destello de brillo para el botón*/
+.shine-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  /* Igual al botón */
+  overflow: hidden;    /* ← SOLO aquí se recorta */
+  z-index: 1;          /* Debajo del texto, encima del icono */
+  pointer-events: none;
+}
+
+.shine {
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(255, 255, 255) 50%,
+    transparent 0%
+  );
+  transform: skewX(-20deg);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+/* --- EFECTO DE ONDAS DE SONIDO AÑADIDO AQUÍ --- */
+
+/* Creamos un SEGUNDO pseudo-elemento (::after) para la onda */
+.himno-cedhu button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #10B65C; 
+    pointer-events: none; 
+    opacity: 0; 
+    transform: scale(2);
+}
+
+/* Cuando está reproduciendo, activamos la animación de la onda */
+.himno-cedhu button.is-playing::after {
+    animation: ripple 2s infinite cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Definición de la animación de "pulsación" (pulso del icono interno) */
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Definición de la animación de "onda" (ripple) */
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2); /* La onda crece al doble del tamaño del botón */
+    opacity: 0; /* y desaparece */
+  }
+}
+
+
+/* Texto SIEMPRE adelante (sin cambios) */
+.himno-cedhu button span,
+.himno-cedhu button br,
+.himno-cedhu button p{
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover (sin cambios) */
+.himno-cedhu button:hover {
+  transform: scale(1.12);
+}
+
+/* --- EFECTO DESTELLO RECTO --- */
+
+.himno-cedhu button .shine {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1; /* Debajo del texto pero encima del fondo */
+  border-radius: 50%; /* Se adapta al borde circular del botón */
+}
+
+.himno-cedhu button:hover .shine {
+  left: 140%;
+  opacity: 1;
+}
+
+
+/* Móviles (sin cambios) */
+@media (max-width: 768px) {
+  .himno-cedhu {
+    bottom: 70px;
+    left: 12px;
+  }
+  .himno-cedhu button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+
+
+/* Estado inicial: invisible y desplazado hacia abajo */
+.animado-inicio {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Estado animado: visible y en posición */
+.animado {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.25s ease-out; /* animación más rápida */
+}
+
+/* === Líneas decorativas debajo de todos los títulos principales === */
+.section h2::after,
+.principios h2::after,
+.timeline h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.section h2::before,
+.section h2::after {
+  content: none !important;
+}

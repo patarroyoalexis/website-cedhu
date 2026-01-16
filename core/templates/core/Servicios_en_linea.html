@@ -1,0 +1,618 @@
+{% extends 'core/base.html' %} 
+{% block title %}Servicios y Comunidad - CEDHU{%endblock %} 
+{% load static %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/Servicios_en_linea.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<!-- ========================================
+     SECCIÓN HERO PRINCIPAL
+     ======================================== -->
+<section class="servicios-en-linea">
+  <div class="hero-content container">
+    <h2>SERVICIOS EN LÍNEA</h2>
+    <p>
+      Conectando a nuestra familia cedhuista con
+      <strong>herramientas digitales</strong> y
+      <strong>espacios de encuentro</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ========================================
+     SECCIÓN SERVICIOS EN LÍNEA
+     ======================================== -->
+<section id="servicios-en-linea" class="seccion-contenido">
+  <div class="encabezado-seccion">
+    <h2 class="titulo-seccion">
+      <i class="fas fa-laptop"></i> SERVICIOS EN LÍNEA
+    </h2>
+    <p class="descripcion-seccion">
+      Facilitamos tu experiencia educativa con plataformas digitales integradas.
+    </p>
+  </div>
+
+  <!-- Introducción Servicios -->
+  <article class="introduccion-servicios">
+    <h3 class="titulo-introduccion">¿PARA QUÉ SIRVEN?</h3>
+    <p class="texto-introduccion">
+      Nuestros servicios en línea son herramientas tecnológicas diseñadas para
+      <strong
+        >fortalecer la comunicación entre el colegio, las familias y los
+        estudiantes</strong
+      >, permitiendo un seguimiento continuo del proceso formativo y facilitando
+      la gestión académica y administrativa desde cualquier lugar.
+    </p>
+    <p class="texto-introduccion">
+      Estos servicios digitales buscan optimizar tiempos, promover la autonomía
+      estudiantil y mantener a toda la comunidad educativa informada en tiempo
+      real sobre calificaciones, asistencias, actividades y comunicaciones
+      institucionales.
+    </p>
+  </article>
+
+  <!-- Grid de Servicios -->
+  <section class="grilla-servicios">
+    <!-- Servicio: Portal Académico -->
+    <article class="tarjeta-servicio">
+      <figure class="icono-servicio">
+        <i class="fas fa-graduation-cap"></i>
+      </figure>
+      <h3 class="titulo-servicio">PORTAL ACADÉMICO</h3>
+      <p class="descripcion-servicio">
+        Acceso a calificaciones, boletines, asistencia y seguimiento del
+        desempeño académico en tiempo real. Padres y estudiantes pueden
+        consultar el progreso escolar de forma permanente.
+      </p>
+      <div class="beneficios-servicio">
+        <h4 class="titulo-beneficios">Beneficios:</h4>
+        <ul class="lista-beneficios">
+          <li>
+            <i class="fas fa-check"></i> Transparencia en el proceso evaluativo
+          </li>
+          <li>
+            <i class="fas fa-check"></i> Seguimiento continuo del rendimiento
+          </li>
+          <li>
+            <i class="fas fa-check"></i> Descarga de informes y certificados
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Servicio: Plataforma de Comunicación -->
+    <article class="tarjeta-servicio">
+      <figure class="icono-servicio">
+        <i class="fas fa-comments"></i>
+      </figure>
+      <h3 class="titulo-servicio">PLATAFORMA DE COMUNICACIÓN</h3>
+      <p class="descripcion-servicio">
+        Sistema integrado de mensajería directa con docentes y directivos,
+        notificaciones push sobre eventos importantes, circulares digitales y
+        alertas de emergencia para mantener a la familia informada.
+      </p>
+      <div class="beneficios-servicio">
+        <h4 class="titulo-beneficios">Beneficios:</h4>
+        <ul class="lista-beneficios">
+          <li><i class="fas fa-check"></i> Comunicación ágil y efectiva</li>
+          <li><i class="fas fa-check"></i> Notificaciones instantáneas</li>
+          <li><i class="fas fa-check"></i> Historial de comunicados</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Servicio: Gestión Financiera -->
+    <article class="tarjeta-servicio">
+      <figure class="icono-servicio">
+        <i class="fas fa-credit-card"></i>
+      </figure>
+      <h3 class="titulo-servicio">GESTIÓN FINANCIERA</h3>
+      <p class="descripcion-servicio">
+        Portal para consultar estados de cuenta, realizar pagos en línea de
+        matrículas y pensiones, generar paz y salvos digitales, y recibir
+        facturas electrónicas de forma automática.
+      </p>
+      <div class="beneficios-servicio">
+        <h4 class="titulo-beneficios">Beneficios:</h4>
+        <ul class="lista-beneficios">
+          <li><i class="fas fa-check"></i> Pagos seguros desde casa</li>
+          <li><i class="fas fa-check"></i> Consulta de saldos 24/7</li>
+          <li><i class="fas fa-check"></i> Facturación electrónica</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+</section>
+
+<!-- ========================================
+     SECCIÓN CALENDARIO DE EVENTOS
+     ======================================== -->
+<section id="calendario-eventos" class="seccion-contenido fondo-claro">
+  <div class="encabezado-seccion">
+    <h2 class="titulo-seccion">
+      <i class="fas fa-calendar-alt"></i> CALENDARIO DE EVENTOS
+    </h2>
+    <p class="descripcion-seccion">
+      Mantente al día con las actividades institucionales más importantes.
+    </p>
+  </div>
+
+  <article class="introduccion-calendario">
+    <p class="texto-calendario">
+      El calendario académico del CEDHU integra fechas clave de formación,
+      celebraciones institucionales, encuentros deportivos y culturales,
+      jornadas pedagógicas y periodos de receso. Consulta regularmente para no
+      perderte ninguna actividad de nuestra comunidad educativa.
+    </p>
+  </article>
+
+  <div class="contenedor-calendario">
+    <div class="encabezado-calendario">
+      <h3 class="titulo-mes-calendario">PRÓXIMOS EVENTOS DESTACADOS</h3>
+    </div>
+
+    <section class="linea-tiempo-eventos">
+      <!-- Evento 1 -->
+      <article class="item-evento">
+        <time class="fecha-evento" datetime="2025-10-15">
+          <span class="dia-evento">15</span>
+          <span class="mes-evento">OCT</span>
+        </time>
+        <div class="detalles-evento">
+          <h4 class="titulo-evento">Feria de la Ciencia Cedhuista</h4>
+          <p class="descripcion-evento">
+            Exposición de proyectos de investigación de todos los semilleros.
+            Presentación de prototipos, experimentos y soluciones innovadoras
+            desarrolladas por nuestros estudiantes.
+          </p>
+          <div class="metadatos-evento">
+            <span class="horario-evento"
+              ><i class="fas fa-clock"></i> 8:00 AM - 4:00 PM</span
+            >
+            <span class="ubicacion-evento"
+              ><i class="fas fa-map-marker-alt"></i> Auditorio Principal</span
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Evento 2 -->
+      <article class="item-evento">
+        <time class="fecha-evento" datetime="2025-10-22">
+          <span class="dia-evento">22</span>
+          <span class="mes-evento">OCT</span>
+        </time>
+        <div class="detalles-evento">
+          <h4 class="titulo-evento">Escuela de Padres: Educación Digital</h4>
+          <p class="descripcion-evento">
+            Taller sobre crianza responsable en la era digital, manejo de redes
+            sociales y protección de menores en internet. Actividad dirigida a
+            padres de familia de todos los niveles.
+          </p>
+          <div class="metadatos-evento">
+            <span class="horario-evento"
+              ><i class="fas fa-clock"></i> 6:00 PM - 8:00 PM</span
+            >
+            <span class="ubicacion-evento"
+              ><i class="fas fa-map-marker-alt"></i> Sala de Conferencias</span
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Evento 3 -->
+      <article class="item-evento">
+        <time class="fecha-evento" datetime="2025-10-28">
+          <span class="dia-evento">28</span>
+          <span class="mes-evento">OCT</span>
+        </time>
+        <div class="detalles-evento">
+          <h4 class="titulo-evento">Olimpiadas Deportivas Intercolegiales</h4>
+          <p class="descripcion-evento">
+            Competencia deportiva que reúne a estudiantes de bachillerato en
+            disciplinas como fútbol, baloncesto, voleibol y atletismo.
+            Celebración del deporte y los valores del juego limpio.
+          </p>
+          <div class="metadatos-evento">
+            <span class="horario-evento"
+              ><i class="fas fa-clock"></i> 7:00 AM - 2:00 PM</span
+            >
+            <span class="ubicacion-evento"
+              ><i class="fas fa-map-marker-alt"></i> Coliseo Deportivo</span
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Evento 4 -->
+      <article class="item-evento">
+        <time class="fecha-evento" datetime="2025-11-05">
+          <span class="dia-evento">05</span>
+          <span class="mes-evento">NOV</span>
+        </time>
+        <div class="detalles-evento">
+          <h4 class="titulo-evento">Festival Cultural Cedhuista</h4>
+          <p class="descripcion-evento">
+            Celebración de la diversidad cultural con danzas, teatro, música y
+            gastronomía. Participan estudiantes de todos los grados presentando
+            muestras artísticas y culturales.
+          </p>
+          <div class="metadatos-evento">
+            <span class="horario-evento"
+              ><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</span
+            >
+            <span class="ubicacion-evento"
+              ><i class="fas fa-map-marker-alt"></i> Instalaciones CEDHU</span
+            >
+          </div>
+        </div>
+      </article>
+
+      <!-- Evento 5 -->
+      <article class="item-evento">
+        <time class="fecha-evento" datetime="2025-11-18">
+          <span class="dia-evento">18</span>
+          <span class="mes-evento">NOV</span>
+        </time>
+        <div class="detalles-evento">
+          <h4 class="titulo-evento">Ceremonia de Grados</h4>
+          <p class="descripcion-evento">
+            Acto solemne de proclamación de bachilleres. Celebración del
+            esfuerzo, dedicación y logros de nuestros estudiantes graduandos.
+            Evento protocolar con entrega de diplomas.
+          </p>
+          <div class="metadatos-evento">
+            <span class="horario-evento"
+              ><i class="fas fa-clock"></i> 3:00 PM - 6:00 PM</span
+            >
+            <span class="ubicacion-evento"
+              ><i class="fas fa-map-marker-alt"></i> Teatro Municipal</span
+            >
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</section>
+
+<!-- ========================================
+     SECCIÓN HORARIOS DE ATENCIÓN
+     ======================================== -->
+<section id="horarios-atencion" class="seccion-contenido">
+  <div class="encabezado-seccion">
+    <h2 class="titulo-seccion">
+      <i class="fas fa-clock"></i> HORARIOS DE ATENCIÓN
+    </h2>
+    <p class="descripcion-seccion">
+      Nuestras puertas están abiertas para atenderte en los siguientes horarios.
+    </p>
+  </div>
+
+  <section class="grilla-horarios">
+    <!-- Horario: Atención General -->
+    <article id="fondo-general" class="tarjeta-horario destacada">
+      <figure class="icono-horario">
+        <i class="fas fa-school"></i>
+      </figure>
+      <h3 class="titulo-horario">Atención General</h3>
+      <div class="detalles-horario">
+        <p class="fila-horario">
+          <span class="etiqueta-horario">Lunes a Viernes:</span>
+          <time class="tiempo-horario"
+            >7:30 AM - 11:30 AM / 2:30 PM - 4:30 PM</time
+          >
+        </p>
+        <aside class="nota-horario">
+          <i class="fas fa-info-circle"></i>
+          <p>Recepción, información general y trámites administrativos</p>
+        </aside>
+      </div>
+    </article>
+
+    <!-- Horario: Rectoría -->
+    <article id="fondo-rectoria" class="tarjeta-horario">
+      <figure class="icono-horario">
+        <i class="fas fa-user-tie"></i>
+      </figure>
+      <h3 class="titulo-horario">Rectoría</h3>
+      <div class="detalles-horario">
+        <p class="fila-horario">
+          <span class="etiqueta-horario">Lunes a Viernes:</span>
+          <time class="tiempo-horario"
+            >7:30 AM - 11:30 AM / 2:30 PM - 4:30 PM</time
+          >
+        </p>
+        <aside class="nota-horario">
+          <i class="fas fa-calendar-check"></i>
+          <p>
+            Atención con cita previa. Solicitar agendamiento en recepción o vía
+            telefónica
+          </p>
+        </aside>
+      </div>
+    </article>
+
+    <!-- Horario: Coordinación Académica -->
+    <article id="fondo-coordinacion" class="tarjeta-horario">
+      <figure class="icono-horario">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </figure>
+      <h3 class="titulo-horario">Coordinación Académica</h3>
+      <div class="detalles-horario">
+        <p class="fila-horario">
+          <span class="etiqueta-horario">Lunes a Viernes:</span>
+          <time class="tiempo-horario"
+            >7:30 AM - 11:30 AM / 2:30 PM - 4:30 PM</time
+          >
+        </p>
+        <aside class="nota-horario">
+          <i class="fas fa-info-circle"></i>
+          <p>Seguimiento académico, planillas, certificados y constancias</p>
+        </aside>
+      </div>
+    </article>
+
+    <!-- Horario: Psicología y Orientación -->
+    <article id="fondo-psicologia" class="tarjeta-horario">
+      <figure class="icono-horario">
+        <i class="fas fa-hand-holding-heart"></i>
+      </figure>
+      <h3 class="titulo-horario">Psicología y Orientación</h3>
+      <div class="detalles-horario">
+        <p class="fila-horario">
+          <span class="etiqueta-horario">Lunes a Viernes:</span>
+          <time class="tiempo-horario"
+            >7:30 AM - 11:30 AM / 2:30 PM - 4:30 PM</time
+          >
+        </p>
+        <aside class="nota-horario">
+          <i class="fas fa-calendar-check"></i>
+          <p>
+            Atención psicológica con cita previa. Acompañamiento socioemocional
+          </p>
+        </aside>
+      </div>
+    </article>
+
+    <!-- Horario: Tesorería -->
+    <article id="fondo-tesoreria" class="tarjeta-horario">
+      <figure class="icono-horario">
+        <i class="fas fa-calculator"></i>
+      </figure>
+      <h3 class="titulo-horario">Tesorería</h3>
+      <div class="detalles-horario">
+        <p class="fila-horario">
+          <span class="etiqueta-horario">Lunes a Viernes:</span>
+          <time class="tiempo-horario"
+            >7:30 AM - 11:30 AM / 2:30 PM - 4:30 PM</time
+          >
+        </p>
+        <aside class="nota-horario">
+          <i class="fas fa-info-circle"></i>
+          <p>Pagos, estados de cuenta y paz y salvos</p>
+        </aside>
+      </div>
+    </article>
+
+    <!-- Horario: Administración -->
+    <article id="fondo-administracion" class="tarjeta-horario">
+      <figure class="icono-horario">
+        <i class="fas fa-building"></i>
+      </figure>
+      <h3 class="titulo-horario">Administración</h3>
+      <div class="detalles-horario">
+        <p class="fila-horario">
+          <span class="etiqueta-horario">Lunes a Viernes:</span>
+          <time class="tiempo-horario"
+            >7:30 AM - 11:30 AM / 2:30 PM - 4:30 PM</time
+          >
+        </p>
+        <aside class="nota-horario">
+          <i class="fas fa-info-circle"></i>
+          <p>
+            Gestión administrativa, soporte institucional y procesos internos
+          </p>
+        </aside>
+      </div>
+    </article>
+  </section>
+</section>
+
+<!-- ========================================
+     SECCIÓN EGRESADOS CEDHUISTAS
+     ======================================== -->
+<section id="egresados-cedhuistas" class="seccion-contenido fondo-claro">
+  <div class="encabezado-seccion">
+    <h2 class="titulo-seccion">
+      <i class="fas fa-user-graduate"></i> EGRESADOS CEDHUISTAS
+    </h2>
+    <p class="descripcion-seccion">
+      Historias de éxito que nos llenan de orgullo y motivan a las nuevas
+      generaciones.
+    </p>
+  </div>
+
+  <article class="introduccion-egresados">
+    <h3 class="titulo-introduccion">Nuestra Red de Egresados</h3>
+    <p class="texto-introduccion">
+      Los egresados del CEDHU son el testimonio vivo de la efectividad de
+      nuestra <strong>Filosofía de la Felicidad</strong>. Son profesionales
+      exitosos, líderes sociales, emprendedores y ciudadanos comprometidos que
+      han llevado los valores institucionales a sus comunidades y lugares de
+      trabajo.
+    </p>
+    <p class="texto-introduccion">
+      Mantener el vínculo con nuestros exalumnos es fundamental. Por eso hemos
+      creado una <strong>Red de Egresados Cedhuistas</strong> que facilita el
+      networking, ofrece oportunidades laborales, promueve el mentorazgo con
+      estudiantes actuales y organiza encuentros anuales para fortalecer los
+      lazos fraternos.
+    </p>
+  </article>
+
+  <section class="seccion-testimonios">
+    <h3 class="titulo-testimonios">Historias de Éxito</h3>
+    <section class="grilla-testimonios">
+      <!-- Testimonio 1 -->
+      <article class="tarjeta-testimonio">
+        <div class="encabezado-testimonio">
+          <figure class="avatar-testimonio">
+            <i class="fas fa-user-circle"></i>
+          </figure>
+          <div class="informacion-testimonio">
+            <h4 class="nombre-testimonio">María Fernanda Rodríguez</h4>
+            <p class="titulo-profesional-testimonio">
+              Ingeniera Biomédica - Promoción 2018
+            </p>
+          </div>
+        </div>
+        <blockquote class="texto-testimonio">
+          "El CEDHU me enseñó que la felicidad y la excelencia van de la mano.
+          Hoy trabajo en investigación médica y aplico los valores de
+          perseverancia y empatía que aprendí en el colegio. Agradezco
+          infinitamente a mis maestros por creer en mí"
+        </blockquote>
+        <div class="logro-testimonio">
+          <i class="fas fa-trophy"></i>
+          <span
+            >Actualmente investigadora en el Hospital Universitario San
+            Ignacio</span
+          >
+        </div>
+      </article>
+
+      <!-- Testimonio 2 -->
+      <article class="tarjeta-testimonio">
+        <div class="encabezado-testimonio">
+          <figure class="avatar-testimonio">
+            <i class="fas fa-user-circle"></i>
+          </figure>
+          <div class="informacion-testimonio">
+            <h4 class="nombre-testimonio">Andrés Felipe Mora</h4>
+            <p class="titulo-profesional-testimonio">
+              Emprendedor Social - Promoción 2016
+            </p>
+          </div>
+        </div>
+        <blockquote class="texto-testimonio">
+          "La Pedagogía de la Felicidad me impulsó a crear mi propia fundación
+          que trabaja con jóvenes vulnerables. El CEDHU no solo me dio
+          herramientas académicas, sino un propósito de vida: transformar mi
+          entorno"
+        </blockquote>
+        <div class="logro-testimonio">
+          <i class="fas fa-trophy"></i>
+          <span
+            >Fundador de 'Semillas de Cambio' - ONG reconocida
+            nacionalmente</span
+          >
+        </div>
+      </article>
+
+      <!-- Testimonio 3 -->
+      <article class="tarjeta-testimonio">
+        <div class="encabezado-testimonio">
+          <figure class="avatar-testimonio">
+            <i class="fas fa-user-circle"></i>
+          </figure>
+          <div class="informacion-testimonio">
+            <h4 class="nombre-testimonio">Laura Valentina Sánchez</h4>
+            <p class="titulo-profesional-testimonio">
+              Abogada y Docente - Promoción 2015
+            </p>
+          </div>
+        </div>
+        <blockquote class="texto-testimonio">
+          "Estudiar en el CEDHU fue una experiencia transformadora. Los
+          semilleros de investigación despertaron mi pasión por el derecho
+          constitucional. Hoy soy docente universitaria y cada día transmito a
+          mis estudiantes el amor por el aprendizaje que mis profesores me
+          inculcaron"
+        </blockquote>
+        <div class="logro-testimonio">
+          <i class="fas fa-trophy"></i>
+          <span
+            >Docente de la Universidad Pedagógica y Tecnológica de
+            Colombia</span
+          >
+        </div>
+      </article>
+    </section>
+  </section>
+
+  <section class="seccion-registro-egresados">
+    <h3 class="titulo-registro">¿ERES EGRESADO DEL CEDHU?</h3>
+    <p class="texto-registro">
+      Regístrate en nuestra Red de Egresados y mantente conectado con tu familia
+      Cedhuista. Comparte tus logros, encuentra oportunidades y sigue siendo
+      parte de nuestra historia.
+    </p>
+
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdur24tlcOFGNH0woLNvYqyCCFSKnTw2prA9T4sWRb6XuGclQ/viewform?usp=header"
+      class="boton-registro"
+      target="_blank"
+    >
+      <i class="fas fa-user-plus"></i> Registrarme en la Red de Egresados
+    </a>
+  </section>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ============================================
+    // BARRA DE PROGRESO DE LECTURA - CEDHU
+    // ============================================
+    function actualizarProgresoLectura() {
+      const scrollVentana = document.documentElement.scrollTop;
+      const altura =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const porcentajeScroll = (scrollVentana / altura) * 100;
+
+      let barraProgreso = document.getElementById("barra-progreso-lectura");
+      if (!barraProgreso) {
+        barraProgreso = document.createElement("div");
+        barraProgreso.id = "barra-progreso-lectura";
+        document.body.prepend(barraProgreso);
+      }
+      barraProgreso.style.width = porcentajeScroll + "%";
+    }
+
+    // Crear estilos para la barra de progreso
+    const estilos = document.createElement("style");
+    estilos.textContent = `
+    #barra-progreso-lectura {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10B65C 0%, #FFE600 100%);
+      z-index: 9999;
+      transition: width 0.15s ease-out;
+      box-shadow: 0 2px 4px rgba(14, 168, 82, 0.25);
+    }
+  `;
+    document.head.appendChild(estilos);
+
+    // Escuchar el evento de scroll con throttle para mejor rendimiento
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          actualizarProgresoLectura();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Actualizar al cargar la página
+    actualizarProgresoLectura();
+  });
+</script>
+
+{% endblock %} {% block extra_js %}
+<script src="{% static 'core/js/servicios_en_linea.js' %}"></script>
+{% endblock %}
