@@ -13,8 +13,9 @@ DEBUG = True
 
 # Hosts permitidos para servir el proyecto.
 ALLOWED_HOSTS = [
+    '.railway.app',
     '127.0.0.1', 
-    'localhost',
+    'localhost'
 ]
 
 INSTALLED_APPS = [
@@ -82,7 +83,12 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+# Para desarrollo - busca archivos estáticos aquí
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'core', 'static')]
+
+# Para producción - collectstatic reúne todos los archivos aquí
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -90,3 +96,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = '/login/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
