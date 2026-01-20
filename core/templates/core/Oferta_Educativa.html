@@ -370,9 +370,9 @@ INVESTIGACIÓN - CEDHU{% endblock %} {% load static %} {% block extra_css %}
   </div>
 
   <!-- Botón Volver Arriba -->
-  <button id="btn-volver-arriba" aria-label="Volver arriba">
+  {% comment %} <button id="btn-volver-arriba" aria-label="Volver arriba">
     <i class="fas fa-arrow-up"></i>
-  </button>
+  </button> {% endcomment %}
   {% endblock %} {% block extra_js %}
   <script src="{% static 'core/js/oferta_educativa.js' %}"></script>
   {% endblock %}

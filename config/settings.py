@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Modo de depuración. Desactivar en producción.
-DEBUG = True
+DEBUG = False
 
 # Hosts permitidos para servir el proyecto.
 ALLOWED_HOSTS = [
