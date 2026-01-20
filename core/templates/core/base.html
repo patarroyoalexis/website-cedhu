@@ -64,19 +64,19 @@
          class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" 
          role="menuitem">Inicio</a>
 
-      <a href="{% url 'Nosotros' %}" 
+      <a href="{% url 'nosotros' %}" 
          class="nav-link {% if request.resolver_match.url_name == 'nosotros' %}active{% endif %}" 
          role="menuitem">Nosotros</a>
 
-      <a href="{% url 'Oferta_Educativa' %}" 
+      <a href="{% url 'oferta_educativa' %}" 
          class="nav-link {% if request.resolver_match.url_name == 'oferta_educativa' %}active{% endif %}" 
          role="menuitem">Oferta Educativa</a>
 
-      <a href="{% url 'Servicios_en_linea' %}" 
+      <a href="{% url 'servicios_en_linea' %}" 
          class="nav-link {% if request.resolver_match.url_name == 'servicios_en_linea' %}active{% endif %}" 
          role="menuitem">Servicios en línea</a>
 
-      {% comment %} <a href="{% url 'Admisiones' %}" 
+      {% comment %} <a href="{% url 'admisiones' %}" 
          class="nav-link {% if request.resolver_match.url_name == 'admisiones' %}active{% endif %}" 
          role="menuitem">Admisiones</a> {% endcomment %}
 
@@ -205,7 +205,7 @@
     <div class="footer-section">
       <h4>Información de contacto</h4>
       <p>⌖ Calle 28 # 8 50 (Sogamoso Boyacá)</p>
-      <p>☎ Teléfono: (02) 123-4567</p>
+      <p>☎ Teléfono: 6087700316 - 6087700316</p>
       <p>✉ Email: cedhu@cedhu.edu.co</p>
       <p>Horario de Formacion:</p>
       <p>⌚ Lunes a Viernes: 7:30 a.m. a 12.00 m. y de 2:00 p.m. a 5:00 p.m.</p>
@@ -216,9 +216,9 @@
       <h4>Navegación rápida</h4>
       <ul>
         <li><a href="{% url 'home' %}">Inicio</a></li>
-        <li><a href="{% url 'Nosotros' %}">Nosotros</a></li>
-        <li><a href="{% url 'Oferta_Educativa' %}">Oferta Educativa</a></li>
-        <li><a href="{% url 'Servicios_en_linea' %}">Servicios en línea</a></li>
+        <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+        <li><a href="{% url 'oferta_educativa' %}">Oferta Educativa</a></li>
+        <li><a href="{% url 'servicios_en_linea' %}">Servicios en línea</a></li>
         <li><a href="{% url 'login' %}"></a></li>
       </ul>
     </div>

@@ -26,16 +26,16 @@ def login_view(request):
             messages.error(request, 'Usuario o contraseña incorrectos')
     return render(request, 'core/login.html')
 
-def Nosotros_view(request):
+def nosotros_view(request):
     return render(request, 'core/nosotros.html')
 
-def Admisiones_view(request):
+def admisiones_view(request):
     return render(request, 'core/admisiones.html')
 
-def Oferta_Educativa_view(request):
+def oferta_educativa_view(request):
     return render(request, 'core/oferta_educativa.html')
 
-def Servicios_en_linea_view(request):
+def servicios_en_linea_view(request):
     return render(request, 'core/servicios_en_linea.html')
 
 def about(request):
