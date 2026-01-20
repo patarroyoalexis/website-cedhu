@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %} {% block title %}Login - CEDHU{% endblock %} {%
+load static %} {% block content %}
+
+<section class="login-section">
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Usuario" required />
+      <input
+        type="password"
+        name="password"
+        placeholder="Contraseña"
+        required
+      />
+      <button type="submit">Ingresar</button>
+      {% if error %}
+      <p class="error" style="color: red">{{ error }}</p>
+      {% endif %}
+    </form>
+  </div>
+</section>
+{% endblock %}

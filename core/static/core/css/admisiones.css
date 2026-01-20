@@ -1,0 +1,317 @@
+/* =====================================================
+   ADMISIONES – CEDHU
+   Archivo: Admisiones.css
+   ===================================================== */
+
+/* ---------- Variables base (puedes alinearlas al global) ---------- */
+:root {
+  --color-primary: #10b65c;
+  --color-primary-dark: #0e9e51;
+  --color-bg-light: #f5fbf8;
+  --color-text: #2c2c2c;
+  --color-muted: #6b7280;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Reset ligero ---------- */
+.admisiones {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.admisiones * {
+  box-sizing: border-box;
+}
+
+/* ---------- Contenedor ---------- */
+.admisiones .container {
+  width: min(1100px, 90%);
+  margin-inline: auto;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+.admisiones-hero {
+  background: linear-gradient(
+    135deg,
+    #e8f7ef,
+    #ffffff
+  );
+  padding: 6rem 0 5rem;
+  text-align: center;
+}
+
+.admisiones-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  color: var(--color-primary-dark);
+}
+
+.admisiones-hero p {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+/* =====================================================
+   BOTONES
+   ===================================================== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(16, 182, 92, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(16, 182, 92, 0.45);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   BIENVENIDA
+   ===================================================== */
+.admisiones-bienvenida {
+  padding: 4.5rem 0;
+  text-align: center;
+}
+
+.admisiones-bienvenida h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.admisiones-bienvenida p {
+  max-width: 720px;
+  margin: auto;
+  color: var(--color-muted);
+}
+
+/* =====================================================
+   PROCESO
+   ===================================================== */
+.admisiones-proceso {
+  background: var(--color-bg-light);
+  padding: 5rem 0;
+}
+
+.admisiones-proceso h2 {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 3rem;
+}
+
+.proceso-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+}
+
+.paso {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 1.8rem;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.paso:hover {
+  transform: translateY(-6px);
+}
+
+.paso-numero {
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+}
+
+.paso h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.paso p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+/* =====================================================
+   REQUISITOS
+   ===================================================== */
+.admisiones-requisitos {
+  padding: 4.5rem 0;
+}
+
+.admisiones-requisitos h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.lista-requisitos {
+  max-width: 650px;
+  margin: auto;
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  list-style: none;
+}
+
+.lista-requisitos li {
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.lista-requisitos li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* =====================================================
+   FECHAS
+   ===================================================== */
+.admisiones-fechas {
+  background: linear-gradient(
+    to right,
+    #e8f7ef,
+    #f5fbf8
+  );
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.admisiones-fechas h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+.admisiones-fechas p {
+  color: var(--color-muted);
+}
+
+/* =====================================================
+   CTA
+   ===================================================== */
+.admisiones-cta {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.admisiones-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.admisiones-cta p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--color-muted);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+  .admisiones-hero {
+    padding: 4.5rem 0 4rem;
+  }
+
+  .admisiones-hero p {
+    font-size: 1rem;
+  }
+
+  .admisiones-bienvenida,
+  .admisiones-requisitos,
+  .admisiones-cta {
+    padding: 3.5rem 0;
+  }
+}
+
+/* =====================================================
+   ANIMACIONES SCROLL – ADMISIONES
+   ===================================================== */
+
+/* Estado inicial */
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* Variantes */
+.animate.fade-up {
+  transform: translateY(30px);
+}
+
+.animate.fade-left {
+  transform: translateX(30px);
+}
+
+.animate.fade-right {
+  transform: translateX(-30px);
+}
+
+.animate.zoom-in {
+  transform: scale(0.95);
+}
+
+/* Estado visible */
+.animate.show {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Delay opcional */
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }
+.delay-4 { transition-delay: 0.6s; }
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

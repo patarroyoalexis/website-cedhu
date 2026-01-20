@@ -1,0 +1,96 @@
+Servicios en linea / Html
+
+<section class="servicios-en-linea">
+  <div class="container">
+    <h1>SERVICIOS EN LÍNEA</h1>
+    <p>
+      En el Colegio CEDHU, ponemos a disposición de nuestra comunidad educativa una serie de servicios en línea que facilitan la comunicación, el aprendizaje y la gestión académica de nuestros estudiantes, docentes y padres de familia.
+    </p>
+  </div>
+</section>
+
+<section class="calendario-eventos">
+  <div class="container">
+    <h2>CALENDARIO DE EVENTOS</h2>
+    <p>Mantente al día con los próximos eventos y actividades de la institución.</p>
+    
+    {% if eventos %}
+      <div class="eventos-grid">
+        {% for evento in eventos %}
+          <div class="evento-card">
+            {% if evento.portada %}
+              <img src="{{ evento.portada.url }}" alt="{{ evento.nombre }}">
+            {% endif %}
+            <div class="evento-info">
+              <h3>{{ evento.nombre }}</h3>
+              <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+              <p><strong>Hora:</strong> {{ evento.hora }}</p>
+              <p>{{ evento.descripcion|safe }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <nav aria-label="Navegación de Eventos">
+        <ul class="pagination justify-content-center mt-4">
+          {% if eventos.has_previous %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ eventos.previous_page_number }}">Anterior</a>
+            </li>
+          {% endif %}
+          
+          <li class="page-item disabled">
+            <span class="page-link">Página {{ eventos.number }} de {{ eventos.paginator.num_pages }}</span>
+          </li>
+          
+          {% if eventos.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ eventos.next_page_number }}">Siguiente</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+      
+    {% else %}
+      <p>No hay eventos próximos programados. ¡Pronto anunciaremos nuevas actividades!</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="horario-materias">
+  <div class="container">
+    <h2>HORARIO ATENCIÓN PADRES</h2>
+    <p>Materias dictadas<br>
+      Aquí podrás encontrar el nombre de cada docente de acuerdo a la materia que dicta.</p>
+
+    <div class="materias-grid">
+      {% for horario in horarios %}
+      <div class="materia-card">
+        {% if horario.imagen %}
+          <img src="{{ horario.imagen.url }}" alt="{{ horario.get_tipo_display }}">
+        {% endif %}
+        <h3>{{ horario.get_tipo_display }}</h3>
+        <p>Aquí podrás encontrar el horario del área de {{ horario.get_tipo_display|lower }}.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="egresados">
+  <div class="container egresados-content">
+    <div class="egresados-text">
+      <h2>EGRESADOS CEDHUISTAS</h2>
+      <p>¡Hola, egresados ​​del CEDHU! 🎓<br><br>
+        Estamos formando un grupo especial para todos los egresados. Queremos mantenernos conectados, compartir experiencias y seguir creciendo juntos.
+      </p>
+      <p>👉 Para unirte al grupo, simplemente ingresa tus datos haciendo clic en el siguiente botón.</p>
+      <a href="#" class="btn">Unirme al grupo</a>
+    </div>
+    <div class="egresados-image">
+      <img src="{% static 'core/img/IMG_3744.JPG' %}" alt="Egresados CEDHU">
+    </div>
+  </div>
+</section>
+
+

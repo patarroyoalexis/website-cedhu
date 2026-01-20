@@ -1,0 +1,224 @@
+/* General page styling */
+body {
+  
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* General page styling */
+body {
+    
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: white;
+    color: black;
+    height: 100vh;
+    position: fixed;
+    padding-top: 20px;
+    text-align: center;
+    transition: width 0.3s;
+}
+
+.sidebar img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin: 10px 0 30px 0;
+}
+
+/* BOTONES (formulario y sidebar) */
+.button,
+form button,
+.sidebar a {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #e74d3c00;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: block;
+    width: calc(100% - 40px); /* resta padding horizontal */
+    box-sizing: border-box;
+    margin: 8px auto;
+    max-width: 200px; /* asegúrate que esté por debajo del ancho del sidebar */
+}
+
+
+.button:hover,
+form button:hover,
+.sidebar a:hover {
+    background-color: #2980b9;
+    border-color: #c03a2b00;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.sidebar a.logout-btn {
+    background-color: #e74c3c; /* Rojo */
+    border: 2px solid #c0392b;
+}
+
+.sidebar a.logout-btn:hover {
+    background-color: #c0392b;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover */
+.button:hover,
+form button:hover,
+.sidebar a:hover {
+    background-color: #2980b9;
+    border-color: #c03a2b00;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main content */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: white;
+    color: black;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+form label {
+    font-weight: bold;
+}
+
+/* Headings */
+h1, h2 {
+    color: black;
+}
+
+/* Logout link (no se usa ya como clase, se unifica arriba) */
+a.logout {
+    float: right;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #c0392b;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+a.logout:hover {
+    background-color: #e74c3c;
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Table action links */
+table a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+/* Error messages */
+p[style*="color: red;"] {
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-left: 4px solid #c0392b;
+    color: #c0392b !important;
+}
+
+/* Checkbox row layout */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-row label {
+    font-weight: bold;
+    margin: 0;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* User box at bottom of sidebar */
+.user-box {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    background-color: #f0f0f0;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    font-size: 14px;
+}

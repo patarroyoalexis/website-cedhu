@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}CEDHU{% endblock %}</title>
+
+  <!-- CSS globales -->
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'core/css/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'core/css/home.css' %}?v=2">
+  <link rel="stylesheet" href="{% static 'core/css/oferta_educativa.css' %}" />
+  <link rel="stylesheet" href="{% static 'core/css/servicios_en_linea.css' %}" />
+  <link rel="stylesheet" href="{% static 'core/css/admisiones.css' %}" />
+  <link rel="icon" href="{% static 'core/img/Icono-Cedhu.ico' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'core/css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'core/css/global.css' %}">
+  
+</head>
+
+
+
+
+<body>
+  <!-- ===== Plataformas aliadas flotantes (solo móviles) ===== -->
+<div class="plataformas-flotantes" aria-label="Plataformas aliadas">
+  <a href="https://site2.q10.com/login..." target="_blank">
+    <img src="{% static 'core/img/Q10.png' %}" alt="Q10">
+  </a>
+  <a href="https://identity.santillanaconnect.com/login/..." target="_blank">
+    <img src="{% static 'core/img/santillana.png' %}" alt="Santillana">
+  </a>
+  <a href="https://www.instruimos.com/Instruimos_Plataforma/index.htm" target="_blank">
+    <img src="{% static 'core/img/Instruimos.avif' %}" alt="Instruimos">
+  </a>
+  <a href="https://identity.edicionesnorma.com/login/..." target="_blank">
+    <img src="{% static 'core/img/Norma.png' %}" alt="Norma">
+  </a>
+</div>
+  <!-- HEADER -->
+  <header>
+   <nav class="navbar" aria-label="Navegación principal">
+  <div class="navbar-left">
+
+    <!-- Logo -->
+    <a href="{% url 'home' %}" class="logo" aria-label="Ir al inicio">
+      <img src="{% static 'core/img/logocedhu.avif' %}" alt="Logo Colegio CEDHU">
+    </a>
+
+    <!-- Botón hamburguesa (visible en móvil) -->
+    <button id="hamburger" class="hamburger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Links de navegación -->
+    <div class="nav-menu" id="navMenu" role="menu">
+
+      <a href="{% url 'home' %}" 
+         class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" 
+         role="menuitem">Inicio</a>
+
+      <a href="{% url 'nosotros' %}" 
+         class="nav-link {% if request.resolver_match.url_name == 'nosotros' %}active{% endif %}" 
+         role="menuitem">Nosotros</a>
+
+      <a href="{% url 'oferta_educativa' %}" 
+         class="nav-link {% if request.resolver_match.url_name == 'oferta_educativa' %}active{% endif %}" 
+         role="menuitem">Oferta Educativa</a>
+
+      <a href="{% url 'servicios_en_linea' %}" 
+         class="nav-link {% if request.resolver_match.url_name == 'servicios_en_linea' %}active{% endif %}" 
+         role="menuitem">Servicios en línea</a>
+
+      {% comment %} <a href="{% url 'admisiones' %}" 
+         class="nav-link {% if request.resolver_match.url_name == 'admisiones' %}active{% endif %}" 
+         role="menuitem">Admisiones</a> {% endcomment %}
+
+
+      {% comment %} <a href="{% url 'login' %}" 
+         class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}" 
+         role="menuitem"></a> {% endcomment %}
+
+      
+
+    </div>
+  </div>
+  <!-- Links plataformas -->
+  <div class="navbar-right" aria-label="Plataformas aliadas">
+    <a href="https://site2.q10.com/login?ReturnUrl=%2F&aplentId=04dd32ac-1f6a-46d0-b388-df88d12b739d" 
+       class="nav-link" target="_blank" rel="noopener">
+      <img src="{% static 'core/img/Q10.png' %}" alt="Q10">
+    </a>
+
+    <a href="https://identity.santillanaconnect.com/login/?client_id=neds_client_compartir_colombia_pro..." 
+       class="nav-link" target="_blank" rel="noopener">
+      <img src="{% static 'core/img/santillana.png' %}" alt="Santillana">
+    </a>
+
+    <a href="https://www.instruimos.com/Instruimos_Plataforma/index.htm" 
+       class="nav-link" target="_blank" rel="noopener">
+      <img src="{% static 'core/img/Instruimos.avif' %}" alt="Instruimos">
+    </a>
+  </div>
+  {% comment %} <a href="https://identity.edicionesnorma.com/login/?client_id=neds_client_norma_colombia_pro..." 
+       class="nav-link" target="_blank" rel="noopener">
+      
+    </a>
+</nav> {% endcomment %}
+
+  </header>
+
+  <!-- CONTENIDO -->
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Botones flotantes RRSS -->
+  <div class="floating-buttons" aria-label="Redes sociales">
+    <a href="https://api.whatsapp.com/send/?phone=573168779094&text&type=phone_number&app_absent=0" target="_blank" class="floating-button whatsapp" title="WhatsApp" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.facebook.com/ccedhu/?locale=es_LA" target="_blank" class="floating-button facebook" title="Facebook" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://www.youtube.com/channel/UCz94-GsQ6TfeqysgDPjxaWQ" target="_blank" class="floating-button youtube" title="YouTube" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+    </a>
+    <a href="https://www.instagram.com/centrodedesarrollocedhu/" target="_blank" class="floating-button instagram" title="Instagram" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+  </div>
+
+  <!-- Botón y panel de accesibilidad -->
+  <!-- Botón flotante de accesibilidad -->
+<div class="accessibility-container"> 
+  <button id="accessibility-toggle" class="accessibility-fab" aria-label="Opciones de accesibilidad">
+    <img src="{% static 'core/img/acsesibilidad.png' %}" alt="Icono de accesibilidad" class="accessibility-icon">
+  </button>
+</div>
+
+  <!-- Panel -->
+  <div id="accessibility-panel" class="accessibility-panel" aria-hidden="true">
+    <h4>Accesibilidad</h4>
+    <div class="accessibility-option">
+      <button type="button" onclick="increaseText()" aria-label="Aumentar texto">A+</button>
+      <span>Aumentar texto</span>
+    </div>
+    <div class="accessibility-option">
+      <button type="button" onclick="decreaseText()" aria-label="Disminuir texto">A-</button>
+      <span>Disminuir texto</span>
+    </div>
+    <div class="accessibility-option">
+      <button type="button" onclick="toggleContrast()" aria-label="Alto contraste">🌙</button>
+      <span>Modo alto contraste</span>
+    </div>
+    <div class="accessibility-option">
+      <button type="button" onclick="toggleGrayscale()" aria-label="Escala de grises">🖤</button>
+      <span>Escala de grises</span>
+    </div>
+    <div class="accessibility-option">
+      <button type="button" onclick="toggleUnderlineLinks()" aria-label="Subrayar enlaces">🔗</button>
+      <span>Subrayar enlaces</span>
+    </div>
+    <div class="accessibility-option">
+      <button type="button" onclick="toggleReadableFont()" aria-label="Fuente legible">📖</button>
+      <span>Fuente legible</span>
+    </div>
+    <div class="accessibility-option">
+      <button type="button" onclick="toggleReduceMotion()" aria-label="Reducir animaciones">🚫🎞️</button>
+      <span>Reducir animaciones</span>
+    </div>
+    <div class="accessibility-option">
+      <button type="button" onclick="resetAccessibility()" aria-label="Restablecer ajustes">🔄</button>
+      <span>Restablecer ajustes</span>
+    </div>
+  </div>
+</div>
+
+  <!-- FOOTER -->
+ <footer>
+  <div class="footer-container">
+    <!-- Logo y redes -->
+    <div class="footer-logo">
+      <img src="{% static 'core/img/logocedhu.avif' %}" alt="Logo Colegio Cedhü">
+      <p class="footer-desc">
+        Vigila Mineducación. Personería Jurídica otorgada mediante resolución 11153 del 4 de agosto de 1978.
+      </p>
+
+      
+
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- Información de contacto -->
+    <div class="footer-section">
+      <h4>Información de contacto</h4>
+      <p>⌖ Calle 28 # 8 50 (Sogamoso Boyacá)</p>
+      <p>☎ Teléfono: 6087700316 - 6087700316</p>
+      <p>✉ Email: cedhu@cedhu.edu.co</p>
+      <p>Horario de Formacion:</p>
+      <p>⌚ Lunes a Viernes: 7:30 a.m. a 12.00 m. y de 2:00 p.m. a 5:00 p.m.</p>
+    </div>
+
+    <!-- Navegación rápida -->
+    <div class="footer-section">
+      <h4>Navegación rápida</h4>
+      <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+        <li><a href="{% url 'oferta_educativa' %}">Oferta Educativa</a></li>
+        <li><a href="{% url 'servicios_en_linea' %}">Servicios en línea</a></li>
+        <li><a href="{% url 'login' %}"></a></li>
+      </ul>
+    </div>
+
+    <!-- Información legal -->
+    <div class="footer-section">
+      <h4>Información legal</h4>
+      <ul>
+        <li><a>Política de Tratamiento de Datos</a></li>
+        <li><a>Términos y Condiciones</a></li>
+        <li><a>Transparencia y Acceso a la Información</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Cedhu. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+  <!-- JS global-->
+  <script src="{% static 'core/js/base.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

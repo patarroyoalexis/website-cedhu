@@ -1,0 +1,1066 @@
+/* =====================================
+   CARRUSEL
+===================================== */
+.hero-slide {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+  margin-bottom: 60px;
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* slides */
+.hero-slide .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+.hero-slide .slide.active {
+  opacity: 1;
+  position: fixed; /* ← Se mantiene en el viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* queda detrás del contenido */
+}
+
+/* overlay de texto */
+.hero-slide .overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  z-index: -4;
+  pointer-events: none;
+}
+
+/* estado inicial: texto oculto */
+.hero-slide .overlay .subtitle,
+.hero-slide .overlay .title {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+}
+
+/* estilo visual del texto */
+.hero-slide .overlay .subtitle {
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.hero-slide .overlay .subtitle span {
+  background: #10b65c;
+  padding: 0 8px;
+  display: inline-block;
+}
+.hero-slide .overlay .title {
+  font-size: clamp(3.2rem, 10vw, 6rem);
+  font-weight: 900;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 0.9;
+}
+
+/* imagen y video */
+.hero-slide img,
+.hero-slide video {
+  margin-top: 80px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* dots indicadores */
+.hero-slide .indicators {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; /*Cambiar de none a flex para mostrarlos*/
+  gap: 14px;
+  z-index: 0;
+}
+.hero-slide .dot {
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s, background 0.25s;
+}
+.hero-slide .dot.active {
+  background: #2ddd7f;
+  transform: scale(1.25);
+}
+
+/* animaciones */
+@keyframes slideInSubtitle {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(36px) scale(0.98);
+    filter: blur(3px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+.hero-slide .overlay.animate .subtitle {
+  animation: slideInSubtitle 700ms cubic-bezier(0.22, 0.9, 0.3, 1) both;
+}
+.hero-slide .overlay.animate .title {
+  animation: slideInTitle 900ms cubic-bezier(0.22, 0.9, 0.3, 1) 120ms both;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero-slide .overlay .subtitle {
+    font-size: 1.35rem;
+  }
+  .hero-slide .overlay .title {
+    font-size: clamp(2rem, 12vw, 4rem);
+  }
+  .hero-slide .indicators {
+    bottom: 28px;
+    gap: 10px;
+  }
+  .hero-slide .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* ===============================
+   BOTÓN PLAY / PAUSA HERO
+================================ */
+.hero-control {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 0;
+  backdrop-filter: blur(6px);
+  transition: background 0.25s, transform 0.2s;
+}
+
+.hero-control:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: scale(1.08);
+}
+
+.hero-control:focus {
+  outline: 2px solid #00000080;
+  outline-offset: 2px;
+}
+
+/* ocultarlo en mobile si quieres */
+@media (max-width: 768px) {
+  .hero-control {
+    bottom: 60px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-control {
+    bottom: 50px;
+    left: 12px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* capa que rebota encima de cada slide para incentivar a bajar el sitio web */
+.flow-invitation {
+  content: "";
+  position: fixed;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #a9f3cb;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 3;
+  pointer-events: none;
+
+  /* -------------------------
+  Ciclo completo 30s, pero animación cartoon solo al inicio 
+  ----------------------------*/
+
+  animation: bounceResorte 30s ease-out infinite;
+}
+
+@keyframes bounceResorte {
+  0% {
+    transform: translateY(30px);
+  }
+
+  /* Estiramiento abrupto (salto fuerte) */
+  0.5% {
+    transform: translateY(-5px);
+  }
+
+  /* Compresión fuerte (caída brusca) */
+  1% {
+    transform: translateY(5px);
+  }
+
+  /* 1er rebote pequeño */
+  1.5% {
+    transform: translateY(-5px);
+  }
+
+  6% {
+    transform: translateY(30px);
+  }
+
+  /* Descanso largo hasta que pasen los 30s */
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+/* ==========================
+   SECCIÓN BIENVENIDA
+============================== */
+
+.bienvenida {
+  padding: 6rem 1.5rem 4rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.bienvenida-text {
+  font-size: 1.3em;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  line-height: 1.8; /* interlineado */
+  letter-spacing: 0.03em; /* espaciado entre letras */
+}
+
+.bienvenida-link {
+  font-size: 1.3em;
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #10b65c;
+  text-decoration: none;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  transition: all 0.3s ease;
+}
+
+.bienvenida-link:hover {
+  color: #7ac143;
+}
+
+/* ==========================
+   SECCIÓN NIVELES EDUCATIVOS
+============================== */
+.niveles-educativos {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #10b65c, #3f970b);
+  color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Encabezado */
+.niveles-educativos h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.niveles-educativos p {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #f9f9f9;
+}
+
+/* Contenedor principal */
+.niveles-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Tarjeta de nivel */
+.nivel-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+  backdrop-filter: blur(4px);
+}
+
+.nivel-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Imagen y título */
+.nivel-content img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  image-rendering: smooth;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+}
+
+.nivel-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.nivel-content h3 {
+  font-size: 1.6rem;
+  margin: 15px 0;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Información oculta */
+.nivel-info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 15px;
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.nivel-info p {
+  font-size: 1rem;
+  color: #222;
+  margin: 15px 0;
+}
+
+/* Información visible */
+.nivel-info.show {
+  max-height: 220px;
+  opacity: 1;
+  padding: 15px;
+}
+
+/* Efecto expansión */
+.nivel-card.expanded {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* =====================================
+   SECCIÓN EDUCACIÓN HUMANISTA
+===================================== */
+.educacion-humanista {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #f8f9fa, #eef2f3);
+  position: relative;
+}
+
+/* Título */
+.educacion-humanista h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2em;
+  color: #222;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Texto descriptivo */
+.educacion-humanista p {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.2rem;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Contenedor de tarjetas */
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Tarjeta */
+.feature-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px 26px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea roja superior en hover */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background-color: #dd4134;
+  transition: width 0.35s ease;
+}
+
+.feature-card:hover::before {
+  width: 100%;
+}
+
+/* Imagen */
+.feature-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Título de tarjeta */
+.feature-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: #10b65c;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Texto de tarjeta */
+.feature-card p {
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.55;
+}
+
+/* Hover */
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 32px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff, #f3fcf7);
+}
+
+.feature-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .educacion-humanista {
+    padding: 40px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .educacion-humanista {
+    padding: 30px 12px;
+  }
+  .feature-card {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   PREGUNTAS FRECUENTES (FAQ)
+===================================== */
+.faq {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #10b65c, #f5c400);
+  position: relative;
+  overflow: visible;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2em;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 28px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background-color: #dd4134;
+  transition: width 0.35s ease;
+}
+
+.faq-item:hover::before {
+  width: 100%;
+}
+
+.faq-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #10b65c;
+  font-weight: 600;
+}
+
+.faq-item p {
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq {
+    padding: 50px 16px;
+  }
+  .faq h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .faq {
+    padding: 40px 12px;
+  }
+  .faq-item {
+    padding: 20px;
+  }
+}
+
+/* ===============================
+   CTA INSTITUCIONAL - CEDHU
+================================ */
+
+.cta-institucional {
+  background-color: #f4fbf7; /* verde muy suave institucional */
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-contenido {
+  max-width: 900px;
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Título */
+.cta-contenido h2 {
+  font-weight: 700;
+  color: #1f3d2b; /* verde oscuro elegante */
+  margin-bottom: 1rem;
+}
+
+/* Texto */
+.cta-contenido p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Contenedor de botones */
+.cta-botones {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Botones base */
+.btn-cta {
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  letter-spacing: 0.4px;
+}
+
+/* Botón principal */
+.btn-cta.principal {
+  background-color: #10b65c; /* verde institucional */
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(16, 182, 92, 0.3);
+}
+
+.btn-cta.principal:hover {
+  background-color: #0e9f51;
+  transform: translateY(-2px);
+}
+
+/* Botón secundario */
+.btn-cta.secundario {
+  background-color: transparent;
+  color: #1f3d2b;
+  border: 2px solid #cfe8db;
+}
+
+.btn-cta.secundario:hover {
+  background-color: #e8f7ef;
+  border-color: #10b65c;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .cta-contenido {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-contenido h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-contenido p {
+    font-size: 1rem;
+  }
+}
+/* ===============================
+   CTA INSTITUCIONAL – BLOQUE DESTACADO
+================================ */
+
+.cta-institucional {
+  position: relative;
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, #0e9f51 0%, #10b65c 60%, #1ccf78 100%);
+  overflow: hidden;
+}
+
+/* Elemento decorativo sutil */
+.cta-institucional::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+/* Contenido */
+.cta-contenido {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Título */
+.cta-contenido h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Texto */
+.cta-contenido p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 2.8rem;
+  opacity: 0.95;
+}
+
+/* Botones */
+.cta-botones {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Botón base */
+.btn-cta {
+  padding: 1rem 2.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* Principal */
+.btn-cta.principal {
+  background-color: #ffffff;
+  color: #0e9f51;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-cta.principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Secundario */
+.btn-cta.secundario {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn-cta.secundario:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .cta-contenido h2 {
+    font-size: 1.7rem;
+  }
+
+  .cta-contenido p {
+    font-size: 1rem;
+  }
+}
+
+/* ===============================
+   HERO CTA – CIERRE INSTITUCIONAL
+================================ */
+
+.cta-institucional {
+  position: relative;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9f6 100%);
+  overflow: hidden;
+}
+
+/* Detalle rojo diagonal */
+.cta-institucional::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 120px;
+  background: #dd4134;
+  opacity: 0.5;
+  transform: skewY(-3deg);
+}
+
+/* Detalle amarillo sutil */
+.cta-institucional::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  border: 6px solid #f5c400;
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* Contenido */
+.cta-contenido {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+/* Título */
+.cta-contenido h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f3d2b;
+  margin-bottom: 1.2rem;
+}
+
+/* Texto */
+.cta-contenido p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  color: #4a5d52;
+}
+
+/* Botones */
+.cta-botones {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+/* Botón base */
+.btn-cta {
+  padding: 1rem 2.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* Principal (verde acción) */
+.btn-cta.principal {
+  background-color: #10b65c;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(16, 182, 92, 0.35);
+}
+
+.btn-cta.principal:hover {
+  transform: translateY(-2px);
+  background-color: #0e9f51;
+}
+
+/* Secundario */
+.btn-cta.secundario {
+  background-color: transparent;
+  color: #1f3d2b;
+  border: 2px solid #dd4134;
+}
+
+.btn-cta.secundario:hover {
+  background-color: rgba(221, 65, 52, 0.08);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .cta-institucional {
+    padding: 5rem 1.5rem;
+  }
+
+  .cta-contenido h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-contenido p {
+    font-size: 1rem;
+  }
+}
+
+/* =====================================
+   UBICACIÓN
+===================================== */
+.ubicacion {
+  max-width: 1200px;
+  margin: 3em auto;
+  text-align: center;
+}
+
+.ubicacion h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2em;
+  color: #000;
+}
+.container-ubicación {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% y 50% */
+  gap: 0; /* SIN gutter */
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.mapa-responsive {
+  width: 100%;
+  height: 450px;
+}
+
+.mapa-responsive iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block; /* elimina espacios fantasmas */
+}
+
+/* --- BLOQUEO STREET VIEW HASTA CLICK --- */
+.streetview {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y; /* permite scroll vertical */
+}
+
+/* Bloquea interacción */
+.streetview iframe {
+  pointer-events: none;
+}
+
+/* Overlay siempre presente pero invisible */
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+  z-index: 2;
+}
+
+/* El texto NO visible por defecto */
+.map-overlay span {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Mostrar texto solo al pasar el puntero */
+.streetview:hover .map-overlay span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.map-overlay span::before {
+  content: attr(data-desktop);
+}
+
+/* En móvil */
+@media (hover: none) and (pointer: coarse) {
+  .map-overlay span::before {
+    content: attr(data-mobile);
+  }
+}
+
+/* Bloqueo de interacción */
+.streetview iframe {
+  pointer-events: none;
+}
+
+/* Activado */
+.streetview.active iframe {
+  pointer-events: auto;
+}
+
+.streetview.active .map-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .container-ubicación {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================
+   ESPACIO ENTRE SECCIONES
+===================================== */
+section:not(:last-of-type) {
+  margin-bottom: 60px;
+}

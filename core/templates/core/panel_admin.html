@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Panel Admin - CEDHU{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/panel_admin.css' %}" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- LOGO -->
+      <img src="{% static 'core/img/logocedhu.avif' %}" alt="Logo CEDHU" />
+      <h2>Admin CEDHU</h2>
+      {% if request.user.is_superuser %}
+      <a href="#control-usuarios">Control de usuarios</a>
+      <a href="{% url 'gestionar_inicio' %}">Editar Inicio</a>
+
+      {% endif %}
+      <a href="{% url 'logout' %}" class="logout-btn">Cerrar sesión</a>
+      <div class="user-box">
+        <p>USUARIO: {{ request.user.username }}</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      {% block content %} {% if request.user.is_superuser %}
+      <section id="control-usuarios">
+        <h2>Crear nuevo usuario</h2>
+        {% for message in messages %}
+        <p style="color: rgb(0, 255, 13)">{{ message }}</p>
+        {% endfor %}
+        <form method="post">
+          {% csrf_token %}
+          <label>Usuario:</label><br />
+          <input type="text" name="username" required /><br /><br />
+
+          <label>Contraseña:</label><br />
+          <input type="password" name="password" required /><br /><br />
+
+          <div class="checkbox-row">
+            <label for="id_is_active">Activo:</label>
+            <input type="checkbox" id="id_is_active" name="is_active" checked />
+          </div>
+
+          <button type="submit">Crear Usuario</button>
+        </form>
+
+        <hr />
+        <h2>Usuarios existentes</h2>
+        <table>
+          <tr>
+            <th>Usuario</th>
+            <th>Activo</th>
+            <th>Acciones</th>
+          </tr>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.is_active }}</td>
+            <td>
+              <a href="{% url 'toggle_user' user.id %}">
+                {% if user.is_active %}Desactivar{% else %}Activar{% endif %}
+              </a>
+              |
+              <a
+                href="{% url 'delete_user' user.id %}"
+                onclick="return confirm('¿Estás seguro que deseas eliminar este usuario?')"
+                >Eliminar</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </section>
+      {% else %}
+      <p>No tienes permisos de administrador.</p>
+      {% endif %} {% endblock %}
+    </div>
+  </body>
+</html>
