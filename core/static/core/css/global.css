@@ -42,7 +42,7 @@ body {
 /* Animación base: aparece suave (fade + slide) */
 @keyframes fadeUp {
   0% {
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(25px);
   }
   100% {
@@ -94,14 +94,14 @@ a {
 
 /* Para imágenes */
 img {
-  opacity: 0;
+  opacity: 0.01;
   animation: fadeUp 1.1s ease forwards;
   animation-delay: 0.4s;
 }
 
 /* Para botones */
 button, .btn {
-  opacity: 0;
+  opacity: 0.01;
   animation: fadeUp 1.1s ease forwards;
   animation-delay: 0.45s;
 }
@@ -160,7 +160,7 @@ button, .btn {
   display: flex;
   flex-direction: column;
   height: 100%;
-  opacity: 0;
+  opacity: 0.01;
   animation: fadeUp 1s ease forwards;
   animation-delay: 0.3s;
 }
@@ -186,7 +186,7 @@ button, .btn {
 =================================================================== */
 
 .fade-seq > * {
-  opacity: 0;
+  opacity: 0.01;
   transform: translateY(20px);
   animation: fadeUp 0.9s ease forwards;
 }
