@@ -85,7 +85,6 @@ header {
   animation: fadeUp 1s ease forwards;
   animation-delay: 0.3s;
 }
-
 .nav-link:hover {
   color: #10B65C;
 }
