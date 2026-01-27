@@ -75,11 +75,13 @@ CEDHU{% endblock %} {% block content %}
         <img src="{% static 'core/img/Inicio-de-clase.png' %}" alt="Noticia 1" onclick="openModal(this)">
       </article>
 
-      {% comment %} <article class="news-card">
-        <img src="{% static 'core/img/noticia2.jpg' %}" alt="Noticia 2" onclick="openModal(this)">
+      <article class="news-card">
+        <a href="{% url 'utiles-escolares' %}">
+          <img src="{% static 'core/img/utiles-escolares.png' %}" alt="Útiles escolares">
+        </a>
       </article>
 
-      <article class="news-card">
+      {% comment %} <article class="news-card">
         <img src="{% static 'core/img/noticia3.jpg' %}" alt="Noticia 3" onclick="openModal(this)">
       </article> {% endcomment %}
     </div>
