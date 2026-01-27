@@ -173,7 +173,7 @@ button, .btn {
 .curso-card p {
   flex-grow: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 4;   /* ← Ajusta cuántas líneas quieres */
+  -webkit-line-clamp: 8;   /* ← Ajusta cuántas líneas quieres */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

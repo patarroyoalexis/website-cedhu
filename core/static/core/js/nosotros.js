@@ -161,3 +161,13 @@ function togglePrincipio(card) {
   card.classList.toggle('expanded');
   info.classList.toggle('show');
 }
+
+/* ==========================
+   EXPANDIR TARJETAS PRINCIPIOS / VALORES
+============================== */
+
+document.querySelectorAll(".celda").forEach(celda => {
+    celda.addEventListener("click", () => {
+      celda.classList.toggle("activa");
+    });
+  });
