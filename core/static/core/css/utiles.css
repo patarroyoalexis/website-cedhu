@@ -3,7 +3,7 @@
 }
 
 .utiles-descarga {
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
@@ -55,8 +55,17 @@
 }
 
 .tramite-textos {
-  padding: 4rem 1rem;
+  padding: 2rem;
   text-align: center;
+  
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #f8f9fa, #eef2f3);
+  position: relative;
+  box-shadow: var(--shadow-card);
 }
 
 .textos {
