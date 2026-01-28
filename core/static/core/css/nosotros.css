@@ -150,7 +150,7 @@
   box-shadow: 0 14px 30px rgba(0,0,0,0.10);
 }
 
-/* Flechita opcional */
+/* Flechita */
 .celda::after {
   content: "＋";
   position: absolute;
